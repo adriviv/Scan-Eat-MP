@@ -1,0 +1,25 @@
+<view class="header">
+<text>Favorites</text>
+</view>
+
+<!--logs.wxml
+<view wx:for="{{projects}}" wx:for-item="project" wx:key="project.id" bindtap="showProject" class="card" data-project-id="{{project.id}}">
+-->
+  
+  <view class="card-product">
+    <view class="image">
+      <image src="https://picsum.photos/200/300" style="/*width;<view><br></view>:*/width: 155px;height: 155px;"></image> 
+      </view>
+    <view class="card-product-infos">
+      <view class="h2">Product Name</view>
+      <view class="p">Brand</view>
+      <view class="p">General Ranking</view>
+    </view>
+    <view>
+    <image class="smiley" src="/images/smiley-medium.png" style="/*width;<view><br></view>:*/width: 45px;height: 45px;"></image> 
+    </view>
+  </view>
+
+  <!--logs.wxml
+</view>
+-->
