@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.5",
-	"appid": "wxe59bfa6b23232df8",
+	"appid": "wxdf544f47e3ad46ae",
 	"projectname": "Scan-Eat-MP",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -52,6 +52,21 @@
 					"id": -1,
 					"name": "profile",
 					"pathName": "pages/profile/profile",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "scan",
+					"pathName": "pages/scan/scan",
+					"query": "",
 					"scene": null
 				}
 			]
