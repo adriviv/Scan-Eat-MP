@@ -1,30 +1,60 @@
+<!-- Top Header starts -->
+
 <view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('/images/background-image.jpeg');">
-  <view class="h2">Avatar Picture</view>
-  <view class="p">UserName</view>
+    <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <view class="userinfo">
+      <view class="welcome">Welcome</view>
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+  </view>
+
+<view class="divider">
+  <view class="header">History
+  </view>
 </view>
 
-<view class="header">
-  <text>History</text>
-</view>
+<!-- Top Header finish -->
 
 <!--logs.wxml
 <view wx:for="{{projects}}" wx:for-item="project" wx:key="project.id" bindtap="showProject" class="card" data-project-id="{{project.id}}">
 -->
-  
+
+<!-- card dual -->  
+
+<view class="card-dual">
   <view class="card-product">
     <view class="image">
-      <image src="https://picsum.photos/200/300" style="/*width;<view><br></view>:*/width: 155px;height: 155px;"></image> 
-      </view>
-    <view class="card-product-infos">
-      <view class="h2">Product Name</view>
-      <view class="p">Brand</view>
-      <view class="p">General Ranking</view>
+      <image src="https://picsum.photos/200/300" style="/*width;<view><br></view>:*/width: 100px;height: 100px;"></image> 
     </view>
-    <view>
-    <image class="smiley" src="/images/smiley-medium.png" style="/*width;<view><br></view>:*/width: 45px;height: 45px;"></image> 
+    <view class="info-n-smiley">
+      <view class="card-product-infos">
+        <view class="h2">Product Name</view>
+        <view class="p">Brand</view>
+        <view class="p">General Ranking</view>
+      </view>
+      <view class="smile">
+        <image class="smiley" src="/images/smiley-medium.png" style="/*width;<view><br></view>:*/width: 45px;height: 45px;"></image> 
+      </view>
     </view>
   </view>
-
-  <!--logs.wxml
+  <view class="card-product">
+    <view class="image">
+      <image src="https://picsum.photos/200/300" style="/*width;<view><br></view>:*/width: 100px;height: 100px;"></image> 
+    </view>
+    <view class="info-n-smiley">
+      <view class="card-product-infos">
+        <view class="h2">Product Name</view>
+        <view class="p">Brand</view>
+        <view class="p">General Ranking</view>
+      </view>
+      <view class="smile">
+        <image class="smiley" src="/images/smiley-medium.png" style="/*width;<view><br></view>:*/width: 45px;height: 45px;"></image> 
+      </view>
+    </view>
+  </view>
 </view>
--->
+
+<!-- card dual finsh--> 
