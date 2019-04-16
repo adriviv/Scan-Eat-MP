@@ -1,7 +1,9 @@
+/* Top Header  */
+
 .banner {
   color: white;
   text-align: center;
-  height: 25vh;
+  height: 15vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -9,7 +11,32 @@
   justify-content: center;
 }
 
-.header {
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo {
+
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.userinfo-nickname {
+
+  color: white;
+  font-weight: bold;
+}
+.welcome {
+
+  font-size: 15px;
+}
+
+.divider {
+
   height: 22px;
   background-color: #EA7B4C;
   padding: 5px;
@@ -17,39 +44,78 @@
   font-weight: bold;
 }
 
+.header {
+
+  font-size:20px;
+  padding-left: 5px;
+  height: 100%;
+}
+
+
+/* finish Top Header */
+
+
+/* Dual card */
+
+.card-dual {
+  display:flex;
+
+}
+
+.image {
+  margin-top: 15px;
+  text-align: center;
+}
 
 .card-product {
- overflow: hidden;
- height: 120px;
- background: white;
- box-shadow: 0 0 15px rgba(0,0,0,0.2);
- display: flex;
- align-items: center;
- margin: 10px;
+
+  overflow: hidden;
+  width: 50%;
+  height: 218px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  margin: 10px;
 }
 
 .h2 {
- font-size: 16px;
- font-weight: bold;
- margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .p {
- font-size: 12px;
- line-height: 1.4;
- opacity: .7;
- margin-bottom: 0;
- margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
 }
 
 .card-product-infos {
- padding: 16px;
+
+  margin-left: 10px;
+}
+
+.info-n-smiley {
+
+  display:flex;
+}
+
+.smile {
+
+  margin-left: 10px;
 }
 
 .smiley {
-  position: relative;
-  top: 0px;
-  left: 30px;
+
+  margin-top: 10px;
+
 }
 
-/** finish Card Product design**//* pages/profile/profile.wxss */
+.title {
+
+
+}
+
+/* Finish Dual Card */

@@ -1,45 +1,83 @@
+
 .header {
+position: relative; 
+  top: 50%;
   height: 25px;
   background-color: #EA7B4C;
-  padding: 16px;
+  padding: 14px;
   color: white;
   font-weight: bold;
-  border-bottom: 3px solid white;
+  font-size: 24px;
+  padding-left: 5px;
+  
 }
 
 
+
+/* finish Top Header */
+
+
+/* Dual card */
+
+.card-dual {
+  display:flex;
+  
+
+}
+
+.image {
+  margin-top: 15px;
+  text-align: center;
+}
+
 .card-product {
- overflow: hidden;
- height: 120px;
- background: white;
- box-shadow: 0 0 15px rgba(0,0,0,0.2);
- display: flex;
- align-items: center;
- margin: 10px;
+
+  overflow: hidden;
+  width: 50%;
+  height: 218px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  margin: 10px;
 }
 
 .h2 {
- font-size: 16px;
- font-weight: bold;
- margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .p {
- font-size: 12px;
- line-height: 1.4;
- opacity: .7;
- margin-bottom: 0;
- margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
 }
 
 .card-product-infos {
- padding: 16px;
+
+  margin-left: 10px;
+}
+
+.info-n-smiley {
+
+  display:flex;
+}
+
+.smile {
+
+  margin-left: 10px;
 }
 
 .smiley {
-  position: relative;
-  top: 0px;
-  left: 30px;
+
+  margin-top: 10px;
+
 }
 
-/** finish Card Product design**/
+.title {
+
+}
+
+/* Finish Dual Card */
