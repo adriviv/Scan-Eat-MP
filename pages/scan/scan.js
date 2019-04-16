@@ -15,6 +15,57 @@ Page({
 
   },
 
+  
+  bindScan: function (e) {
+    
+    wx.scanCode({
+    
+      success: (res) => {
+        console.log(res)
+        let food = {
+          barcode: res.result
+        }
+        console.log(food)
+        wx.request({
+          url: `http://localhost:3000/api/v1/users/1/foods`,
+          method: 'POST',
+          data: food,
+        })
+
+        wx.switchTab({
+
+          url: '/pages/profile/profile',
+        
+        })
+      }
+    })
+  },
+
+
+
+/**
+  bindSubmit: function (e) {
+    console.log(e)
+    let food = {
+      barcode: e.detail.value.barcode
+    }
+
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/1/foods`,
+      method: 'POST',
+      data: food,
+      success: res => {
+     
+  
+            wx.switchTab({
+          
+              url: '/pages/profile/profile',
+            })
+          
+      } 
+    })
+  },
+  */
   /**
    * Lifecycle function--Called when page is initially rendered
    */
