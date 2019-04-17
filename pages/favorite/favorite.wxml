@@ -15,31 +15,29 @@
 <view class="card-dual">
   <view class="card-product">
     <view class="image">
-      <image src="https://picsum.photos/200/300" style="/*width;<view><br></view>:*/width: 100px;height: 100px;"></image> 
+      <image src="https://picsum.photos/200/300" class="product-img"></image> 
     </view>
     <view class="info-n-smiley">
       <view class="card-product-infos">
         <view class="h2">Product Name</view>
         <view class="p">Brand</view>
-        <view class="p">General Ranking</view>
-      </view>
-      <view class="smile">
-        <image class="smiley" src="/images/smiley-medium.png" style="/*width;<view><br></view>:*/width: 45px;height: 45px;"></image> 
+        <view class="classification">Medium
+          <image class="dot" src="/images/green-dot.png"></image> 
+        </view>
       </view>
     </view>
   </view>
   <view class="card-product">
     <view class="image">
-      <image src="https://picsum.photos/200/300" style="/*width;<view><br></view>:*/width: 100px;height: 100px;"></image> 
+      <image src="https://picsum.photos/200/300" class="product-img"></image> 
     </view>
     <view class="info-n-smiley">
       <view class="card-product-infos">
         <view class="h2">Product Name</view>
         <view class="p">Brand</view>
-        <view class="p">General Ranking</view>
-      </view>
-      <view class="smile">
-        <image class="smiley" src="/images/smiley-medium.png" style="/*width;<view><br></view>:*/width: 45px;height: 45px;"></image> 
+        <view class="classification">Medium
+          <image class="dot" src="/images/green-dot.png"></image> 
+        </view>
       </view>
     </view>
   </view>

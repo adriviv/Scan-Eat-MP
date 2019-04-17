@@ -1,0 +1,150 @@
+<!-- Product Header-->
+
+<view class="product-header">
+  <view class="image">
+    <image class="product-img" src="https://picsum.photos/200/300" ></image> 
+  </view>
+  <view class="product-info">
+    <view class="h2">Product Name</view>
+    <view class="brand-category-face">
+      <view class="brand-n-category">     
+        <view class="p">Brand</view>
+        <view class="p">Medium</view>
+      </view>
+      <view class="face">
+        <image class="faces" src="/images/smiley-very-good.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="star">
+    <image class="star1" src="/images/favorite_footer_orange.png"></image>
+  </view>
+</view>
+
+<!-- Product finish-->
+
+<view class="ingredients">
+  <view>
+    <view class="h3">Ingredients</view>
+    <view class="h4">Coconut, carrots, flour, artificial </view>
+  </view>
+  <view class="add1">
+    <image class="add" src="/images/add.png"></image>
+  </view>
+</view>
+
+<view class="divider1">
+  <view class="header">Advantages
+  </view>
+</view>
+
+<view class="nutrients">
+  <view class="nutrient-icon">
+    <image class="icons" src="/images/salt_icon.png"></image>
+  </view>
+  <view class="nutrient-text">
+    <view class="h3">Calories
+    </view>
+    <view class="h4">Good 
+    </view>
+  </view>
+  <view class="data">8 mg
+  </view>
+  <view class="face-nutrient">
+    <image class="fac" src="/images/smiley-very-good.png"></image>
+  </view>
+</view>
+<view class="nutrients">
+  <view class="nutrient-icon">
+    <image class="icons" src="/images/salt_icon.png"></image>
+  </view>
+  <view class="nutrient-text">
+    <view class="h3">Calories
+    </view>
+    <view class="h4">Good 
+    </view>
+  </view>
+  <view class="data">8 mg
+  </view>
+  <view class="face-nutrient">
+    <image class="fac" src="/images/smiley-very-good.png"></image>
+  </view>
+</view>
+<view class="divider2">
+  <view class="header">Inconvenient
+  </view>
+</view>
+<view class="nutrients">
+  <view class="nutrient-icon">
+    <image class="icons" src="/images/salt_icon.png"></image>
+  </view>
+  <view class="nutrient-text">
+    <view class="h3">Calories
+    </view>
+    <view class="h4">Good 
+    </view>
+  </view>
+  <view class="data">8 mg
+  </view>
+  <view class="face-nutrient">
+    <image class="fac" src="/images/smiley-very-good.png"></image>
+  </view>
+</view>
+<view class="nutrients">
+  <view class="nutrient-icon">
+    <image class="icons" src="/images/salt_icon.png"></image>
+  </view>
+  <view class="nutrient-text">
+    <view class="h3">Calories
+    </view>
+    <view class="h4">Good 
+    </view>
+  </view>
+  <view class="data">8 mg
+  </view>
+  <view class="face-nutrient">
+    <image class="fac" src="/images/smiley-very-good.png"></image>
+  </view>
+</view>
+<view class="nutrients">
+  <view class="nutrient-icon">
+    <image class="icons" src="/images/salt_icon.png"></image>
+  </view>
+  <view class="nutrient-text">
+    <view class="h3">Calories
+    </view>
+    <view class="h4">Good 
+    </view>
+  </view>
+  <view class="data">8 mg
+  </view>
+  <view class="face-nutrient">
+    <image class="fac" src="/images/smiley-very-good.png"></image>
+  </view>
+</view>
+<view class="nutrients">
+  <view class="nutrient-icon">
+    <image class="icons" src="/images/salt_icon.png"></image>
+  </view>
+  <view class="nutrient-text">
+    <view class="h3">Calories
+    </view>
+    <view class="h4">Good 
+    </view>
+  </view>
+  <view class="data">8 mg
+  </view>
+  <view class="face-nutrient">
+    <image class="fac" src="/images/smiley-very-good.png"></image>
+  </view>
+</view>
+
+
+<!-- <table>
+  <tr>
+    <td><image class="icons" src="/images/salt_icon.png"></image></td>
+    <td>calorie</td>
+    <td> 8 mg</td>
+    <td> face</td>
+  </tr>
+</table> -->
