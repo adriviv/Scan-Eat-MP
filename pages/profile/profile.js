@@ -9,7 +9,8 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: true,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    id: wx.getStorageSync('user_id')
   },
 
   /**
@@ -50,6 +51,20 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+
+   
+      const page = this
+    let userId = wx.getStorageSync('user_id')
+      wx.request({
+        url: `http://localhost:3000//api/v1/users/${userId}/scans`,
+        success: res => {
+          console.log('yihou',res)
+          page.setData(res.data)
+          //wx.setNavigationBarTitle({
+          // title: page.data.name,   
+        }
+      })
+
   },
 
   /**

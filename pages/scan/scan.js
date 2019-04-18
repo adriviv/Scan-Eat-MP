@@ -5,7 +5,6 @@ Page({
    * Page initial data
    */
   data: {
-    id: wx.getStorageSync('user_id')
   },
 
   /**
@@ -21,14 +20,15 @@ Page({
     wx.scanCode({
       /** onlyFromCamera: true, */
       success: (res) => {
-        console.log(res)
+        console.log('gffg', res)
         let food = {
           barcode: res.result
         }
         console.log(food)
-        console.log(this.data)
+        let userId = wx.getStorageSync('user_id')
+        console.log('scanCode userId', userId)
         wx.request({
-          url: `http://localhost:3000/api/v1/users/${this.data.id}/scans`,
+          url: `http://localhost:3000/api/v1/users/${userId}/scans`,
           method: 'POST',
           data: food,
         })
@@ -38,6 +38,9 @@ Page({
           url: '/pages/profile/profile',
         
         })
+      },
+      error: () => {
+        console.log('error')
       }
     })
   },
