@@ -5,7 +5,7 @@ Page({
    * Page initial data
    */
   data: {
-
+    id: wx.getStorageSync('user_id')
   },
 
   /**
@@ -16,18 +16,19 @@ Page({
   },
 
   
-  bindScan: function (e) {
-    
+  bindScan: function (options) {
+  
     wx.scanCode({
-      onlyFromCamera: true,
+      /** onlyFromCamera: true, */
       success: (res) => {
         console.log(res)
         let food = {
           barcode: res.result
         }
         console.log(food)
+        console.log(this.data)
         wx.request({
-          url: `http://localhost:3000/api/v1/users/1/foods`,
+          url: `http://localhost:3000/api/v1/users/${this.data.id}/scans`,
           method: 'POST',
           data: food,
         })
