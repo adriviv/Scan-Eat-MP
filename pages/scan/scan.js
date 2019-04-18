@@ -19,7 +19,7 @@ Page({
   bindScan: function (e) {
     
     wx.scanCode({
-    
+      onlyFromCamera: true,
       success: (res) => {
         console.log(res)
         let food = {
