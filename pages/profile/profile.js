@@ -54,10 +54,11 @@ Page({
 
    
       const page = this
+    let userId = wx.getStorageSync('user_id')
       wx.request({
-        url: `http://localhost:3000//api/v1/users/${this.data.id}/scans`,
+        url: `http://localhost:3000//api/v1/users/${userId}/scans`,
         success: res => {
-          console.log(res)
+          console.log('yihou',res)
           page.setData(res.data)
           //wx.setNavigationBarTitle({
           // title: page.data.name,   
