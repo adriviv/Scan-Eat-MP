@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/favorite/favorite",
     "pages/scan/scan",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/show/show"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,24 +14,25 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+        "selectedColor": "#EA7B4C",
     "list": [
       {
         "pagePath": "pages/favorite/favorite",
         "text": "Favorite",
         "iconPath": "/images/favorite_footer.png",
-        "selectedIconPath": "/images/favorite_footer.png"
+        "selectedIconPath": "/images/favorite_footer_orange.png"
       },
       {
         "pagePath": "pages/scan/scan",
         "text": "Scan",
         "iconPath": "/images/scan_footer.png",
-        "selectedIconPath": "/images/scan_footer.png"
+        "selectedIconPath": "/images/scan_footer_orange.png"
       },
       {
         "pagePath": "pages/profile/profile",
         "text": "Profile",
         "iconPath": "/images/profile_footer.png",
-        "selectedIconPath": "/images/profile_footer.png"
+        "selectedIconPath": "/images/profile_footer_orange.png"
       }
     ]
   },
