@@ -12,7 +12,8 @@
         <view class="p">Medium</view>
       </view>
       <view class="face">
-        <image class="faces" src="/images/smiley-very-good.png"></image>
+        <image class="faces" 
+      src="/images/smiley-very-good.png"></image>
       </view>
     </view>
   </view>
@@ -33,6 +34,8 @@
   </view>
 </view>
 
+
+ 
 <view class="divider1">
   <view class="header">Advantages
   </view>
@@ -40,20 +43,29 @@
 
 <view class="nutrients">
   <view class="nutrient-icon">
-    <image class="icons" src="/images/salt_icon.png"></image>
+  <view wx:for="{{ingredients}}" wx:key="item">
+    <image class="icons" src="/images/{{item.type}}_icon.png"></image>
+    </view>
   </view>
   <view class="nutrient-text">
-    <view class="h3">Calories
+  <view wx:for="{{ingredients}}" wx:key="item">
+    <view class="h3">{{item.type}}
     </view>
-    <view class="h4">Good 
+    </view>
+    <view wx:for="{{health}}" wx:key="item">
+    <view class="h4">{{item.type}} 
+    </view>
     </view>
   </view>
   <view class="data">8 mg
   </view>
   <view class="face-nutrient">
-    <image class="fac" src="/images/smiley-very-good.png"></image>
+  <view wx:for="{{health}}" wx:key="item">
+    <image class="fac" src="/images/smiley-{{item.type}}.png"></image>
+    </view>
   </view>
 </view>
+<!-->
 <view class="nutrients">
   <view class="nutrient-icon">
     <image class="icons" src="/images/salt_icon.png"></image>
@@ -137,7 +149,7 @@
   <view class="face-nutrient">
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
-</view>
+</view> -->
 
 
 <!-- <table>

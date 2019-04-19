@@ -5,15 +5,43 @@ Page({
    * Page initial data
    */
   data: {
-
+    ingredients: [
+      {type: 'sugar'}, {type: 'salt'}, {type: 'protein'}, {type: 'fat'}, {type: 'fiber'}, {type: 'calories'}
+    ],
+    health: [
+      {type: 'good'}, {type: 'medium'}, {type: 'bad'}
+    ]
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
+  /*onLoad: function (options) {},
+      const length = this.data.objectArray.length
+      for (let i = 0; i < length; ++i) 
 
-  },
+
+
+
+
+    // let page = this;
+
+    // const page = this
+    // wx.request({
+    //   url: `http://localhost:3000/api/v1/foods/${options.id}`,
+    //   method: 'GET',
+    //   success: res => {
+    //     page.setData(res.data)
+    //     wx.setNavigationBarTitle({
+    //       title: page.data.name,
+    //       title: page.data.health,
+    //       title: page.data.amount
+
+    //     });
+    //   }
+    // })
+
+  
 
   /**
    * Lifecycle function--Called when page is initially rendered
