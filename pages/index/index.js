@@ -20,7 +20,7 @@ Page({
 
   bindViewTap: function (e) {
        wx.reLaunch({
-        url: '/pages/scan/scan'
+        url: '/pages/profile/profile'
       });
  },
 
