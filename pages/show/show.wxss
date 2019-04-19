@@ -1,4 +1,3 @@
-/* header */
 
 .product-header {
   display: flex;
@@ -10,59 +9,47 @@
   z-index: 999;
   margin-bottom: 20rpx;
 }
-
 .image {
   margin-left: 20rpx;
   margin-right: 40rpx;
   margin-bottom: 20rpx;
+  width: 30%;
 }
-
 .product-img {
   width: 200rpx;
   height: 300rpx;
 }
-
+.product-info {
+  
+  width: 50%;
+}
 .h2 {
   margin-top: 40rpx;
   font-size: 35rpx;
   font-weight: bold;
-
 }
-
 .brand-category-face {
   display: flex ;
 }
-
 .p {
-
   font-size: 30rpx;
   opacity: .7;
   margin-top: 30rpx;
 }
-
 .faces {
-
   width: 80rpx;
   height: 80rpx;
   margin-left: 30rpx;
-  margin-top: 85rpx;
+  margin-top: 119rpx;
 }
 .star {
-
-  margin-left: 150rpx;
-
+  margin-left: 10rpx;
 }
-
-
 .star1 {
-
   width: 60rpx;
   height: 60rpx;
-
 }
-
 /* Finish header */
-
 .divider1 {
   height: 45rpx;
   padding: 10rpx;
@@ -70,12 +57,10 @@
   color: white;
   font-weight: bold;
 }
-
 .header {
   font-size:30rpx;
   padding-left: 15rpx;
 }
-
 .divider2 {
   height: 45rpx;
   padding: 10rpx;
@@ -83,75 +68,51 @@
   color: white;
   font-weight: bold;
 }
-
 .ingredients {
   display: flex;
 }
-
 .h3 {
 font-size: 40 rpx;
 font-weight: bold;
 margin-left: 20rpx;
 }
-
 .h4 {
   font-size: 25rpx;
-  margin-left: 40rpx;
+  margin-left: 20rpx;
   margin-bottom: 10rpx;
 }
-
 .add1 {
-
 }
-
-
 .add {
   margin-left: 300rpx;
   width: 40rpx;
   height: 40rpx;
 }
-
-
 .nutrients {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 100rpx;
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
-
-
 .nutrient-icon {
-
-  align-items: center;
+  width: 10%;
 }
-
+.nutrient-text {
+  width: 40%;
+  padding-left: 70rpx;
+}
 .icons {
-
   margin-top: 15rpx;
   margin-left: 10rpx;
   width: 80rpx;
   height: 80rpx;
 }
-
-
-
-.nutrients .h3 {
-
-  margin-left: 40rpx;
-}
-
 .data {
-
-  font-weight: bold;
+  width: 25%;
 }
-
 .face-nutrient {
-
-  margin-right: 30rpx;
+  width: 10%;
 }
 .fac {
-
   margin-top: 10rpx;
   width: 80rpx;
   height: 80rpx;
