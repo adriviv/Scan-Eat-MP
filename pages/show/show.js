@@ -5,14 +5,23 @@ Page({
    * Page initial data
    */
   data: {
-
+    userId: wx.getStorageSync('user_id'),
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    const page = this
+    
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans/${options.id}`,
+      success: res => {
+        page.setData(res.data)
+        //wx.setNavigationBarTitle({
+        // title: page.data.name,   
+      }
+    })
   },
 
   /**
