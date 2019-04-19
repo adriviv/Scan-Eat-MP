@@ -33,10 +33,8 @@ Page({
           data: food,
         })
 
-        wx.switchTab({
-
-          url: '/pages/profile/profile',
-        
+        wx.reLaunch({
+          url: `../profile/profile`,
         })
       },
       error: () => {

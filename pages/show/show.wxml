@@ -7,8 +7,10 @@
   <view class="product-info">
     <view class="h2">{{food.product_name}}</view>
     <view class="brand-category-face">
-      <view class="brand-n-category">
-        <view class="p">{{food.product_name}}</view>
+
+      <view class="brand-n-category">     
+        <view class="p">{{food.brand}}</view>
+
   <!-- If statement here: if nutrition_grade = a transform into good/mediumm...-->
         <view class="p">{{food.nutrition_grade}}</view>
       </view>
