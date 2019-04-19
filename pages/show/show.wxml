@@ -41,9 +41,7 @@
 
 <view class="nutrients">
   <view class="nutrient-icon">
-  <view wx:for="{{ingredients}}" wx:key="item">
-    <image class="icons" src="/images/{{item.type}}_icon.png"></image>
-    </view>
+    <image class="icons" src="/images/calories_icon.png"></image>
   </view>
   <view class="nutrient-text">
     <view class="h3">Calories</view>
@@ -59,13 +57,13 @@
 
 <view class="nutrients">
   <view class="nutrient-icon">
-    <image class="icons" src="/images/salt_icon.png"></image>
+    <image class="icons" src="/images/sugar_icon.png"></image>
   </view>
   <view class="nutrient-text">
     <view class="h3">Sugar</view>
-    <view class="h4">Good</view>
+    <view class="h4">{{food.sugar_nutrient_level}}</view>
   </view>
-  <view class="data">8 mg</view>
+  <view class="data">{{food.sugar_quantity}}</view>
   <view class="face-nutrient">
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
@@ -75,13 +73,13 @@
 </view>
 <view class="nutrients">
   <view class="nutrient-icon">
-    <image class="icons" src="/images/salt_icon.png"></image>
+    <image class="icons" src="/images/fat_icon.png"></image>
   </view>
   <view class="nutrient-text">
     <view class="h3">Saturated Fat</view>
-    <view class="h4">Good</view>
+    <view class="h4">{{food.saturated_fat_nutrient_level}}</view>
   </view>
-  <view class="data">8 mg</view>
+  <view class="data">{{food.saturated_fat_quantity}}</view>
   <view class="face-nutrient">
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
@@ -92,35 +90,35 @@
   </view>
   <view class="nutrient-text">
     <view class="h3">Salt</view>
-    <view class="h4">Good</view>
+    <view class="h4">{{food.salt_nutrient_level}}</view>
   </view>
-  <view class="data">8 mg</view>
+  <view class="data">{{food.salt_quantity}}</view>
   <view class="face-nutrient">
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
 </view>
 <view class="nutrients">
   <view class="nutrient-icon">
-    <image class="icons" src="/images/salt_icon.png"></image>
+    <image class="icons" src="/images/fiber_icon.png"></image>
   </view>
   <view class="nutrient-text">
     <view class="h3">Fiber</view>
-    <view class="h4">Good</view>
+    <view class="h4">{{food.fiber_nutrient_level}}</view>
   </view>
-  <view class="data">8 mg</view>
+  <view class="data">{{food.fiber_quantity}}</view>
   <view class="face-nutrient">
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
 </view>
 <view class="nutrients">
   <view class="nutrient-icon">
-    <image class="icons" src="/images/salt_icon.png"></image>
+    <image class="icons" src="/images/protein_icon.png"></image>
   </view>
   <view class="nutrient-text">
     <view class="h3">Protein</view>
-    <view class="h4">Good</view>
+    <view class="h4">{{food.protein_nutrient_level}}</view>
   </view>
-  <view class="data">8 mg</view>
+  <view class="data">{{food.protein_quantity}}</view>
   <view class="face-nutrient">
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
