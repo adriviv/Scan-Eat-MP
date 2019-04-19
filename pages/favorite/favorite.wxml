@@ -43,3 +43,13 @@
     </view>
   </view>
 </view>
+
+<view class='calories_bar'>
+  <view class='range'>
+    <view>0</view>
+    <view>160</view>
+    <view>560</view>
+    <view>800</view>
+  </view>
+  <progress percent="80" stroke-width="10"  color="orange" active />
+</view>

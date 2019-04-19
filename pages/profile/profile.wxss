@@ -50,7 +50,7 @@
   margin: 20rpx;
 }
 .image {
-  margin: 30rpx;
+  margin: 10rpx 25rpx 25rpx 25rpx ;
   text-align: center;
 }
 .product-img {
