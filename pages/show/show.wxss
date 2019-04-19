@@ -126,12 +126,12 @@ margin-left: 20rpx;
    border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-.range{
+.range {
   display:flex;
   justify-content: space-between;
 }
 
 .calories_bar {
   margin: 10rpx 40rpx;
-  font-size: 14px;
+  font-size: 16rpx;
 }
