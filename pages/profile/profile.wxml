@@ -24,35 +24,23 @@
 
 <!-- card dual -->  
 
-<view class="card-dual">
-  <view class="card-product">
-    <view class="image">
-      <image src="https://picsum.photos/200/300" class="product-img"></image> 
-    </view>
-    <view class="info-n-smiley">
-      <view class="card-product-infos">
-        <view class="h2">Product Name</view>
-        <view class="p">Brand</view>
-        <view class="classification">Medium
-          <image class="dot" src="/images/green-dot.png"></image> 
+
+  <view wx:for="{{scans}}" wx:for-item="scan" wx:key="scan.id" bindtap="showScan"  data-scan-id="{{scan.food.id}}">
+    <view class="card-product">
+      <view class="image">
+        <image src="{{scan.food.image_url}}" class="product-img"></image> 
+      </view>
+      <view class="info-n-smiley">
+        <view class="card-product-infos">
+          <view class="h2">{{scan.food.product_name}}</view>
+          <view class="p">{{scan.food.brand}}</view>
+          <view class="classification">{{scan.food.nutrition_grade}}
+            <image class="dot" src="/images/green-dot.png"></image> 
+          </view>
         </view>
       </view>
     </view>
   </view>
-  <view class="card-product">
-    <view class="image">
-      <image src="https://picsum.photos/200/300" class="product-img"></image> 
-    </view>
-    <view class="info-n-smiley">
-      <view class="card-product-infos">
-        <view class="h2">Product Name</view>
-        <view class="p">Brand</view>
-        <view class="classification">Medium
-          <image class="dot" src="/images/green-dot.png"></image> 
-        </view>
-      </view>
-    </view>
-  </view>
-</view>
+
 
 <!-- card dual finsh--> 

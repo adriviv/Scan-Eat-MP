@@ -5,7 +5,6 @@ Page({
    * Page initial data
    */
   data: {
-
   },
 
   /**
@@ -16,18 +15,20 @@ Page({
   },
 
   
-  bindScan: function (e) {
-    
+  bindScan: function (options) {
+  
     wx.scanCode({
-      onlyFromCamera: true,
+      /** onlyFromCamera: true, */
       success: (res) => {
-        console.log(res)
+        console.log('gffg', res)
         let food = {
           barcode: res.result
         }
         console.log(food)
+        let userId = wx.getStorageSync('user_id')
+        console.log('scanCode userId', userId)
         wx.request({
-          url: `http://localhost:3000/api/v1/users/1/foods`,
+          url: `http://localhost:3000/api/v1/users/${userId}/scans`,
           method: 'POST',
           data: food,
         })
@@ -37,6 +38,9 @@ Page({
           url: '/pages/profile/profile',
         
         })
+      },
+      error: () => {
+        console.log('error')
       }
     })
   },

@@ -5,44 +5,24 @@ Page({
    * Page initial data
    */
   data: {
-    ingredients: [
-      {type: 'sugar'}, {type: 'salt'}, {type: 'protein'}, {type: 'fat'}, {type: 'fiber'}, {type: 'calories'}
-    ],
-    health: [
-      {type: 'good'}, {type: 'medium'}, {type: 'bad'}
-    ]
+    userId: wx.getStorageSync('user_id'),
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  /*onLoad: function (options) {},
-      const length = this.data.objectArray.length
-      for (let i = 0; i < length; ++i) 
+  onLoad: function (options) {
+    const page = this
 
-
-
-
-
-    // let page = this;
-
-    // const page = this
-    // wx.request({
-    //   url: `http://localhost:3000/api/v1/foods/${options.id}`,
-    //   method: 'GET',
-    //   success: res => {
-    //     page.setData(res.data)
-    //     wx.setNavigationBarTitle({
-    //       title: page.data.name,
-    //       title: page.data.health,
-    //       title: page.data.amount
-
-    //     });
-    //   }
-    // })
-
-  
-
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans/${options.id}`,
+      success: res => {
+        page.setData(res.data)
+        //wx.setNavigationBarTitle({
+        // title: page.data.name,
+      }
+    })
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
