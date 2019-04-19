@@ -106,36 +106,58 @@
 <view wx:elif="{{food.salt_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
   </view>
 </view>
+
+
+
 <view class="nutrients">
-  <view class="nutrient-icon">
-    <image class="icons" src="/images/fiber_icon.png"></image>
-  </view>
-  <view class="nutrient-text">
-    <view class="h3">Fiber</view>
-    <view class="h4">{{food.fiber_nutrient_level}}</view>
-  </view>
-  <view class="data">{{food.fiber_quantity}} g</view>
-  <view class="face-nutrient">
-<view wx:if="{{food.fiber_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
-<view wx:elif="{{food.fiber_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
-<view wx:elif="{{food.fiber_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
+ <!-- <view wx:if="{{ffood.fiber_quantity !== '0'}}"> -->
+    <view class="nutrient-icon">
+      <image class="icons" src="/images/fiber_icon.png"></image>
+    </view>
+    <view class="nutrient-text">
+      <view class="h3">Fiber</view>
+      <view class="h4">{{food.fiber_nutrient_level}}</view>
+    </view>
+    <view class="data">{{food.fiber_quantity}} g</view>
+    <view class="face-nutrient">
+      <view wx:if="{{food.fiber_nutrient_level == 'high'}}">
+        <image class="fac" src="/images/smiley-good.png"></image>
+      </view>
+      <view wx:elif="{{food.fiber_nutrient_level == 'moderate'}}">
+        <image class="fac" src="/images/smiley-medium.png"></image>
+      </view>
+      <view wx:elif="{{food.fiber_nutrient_level == 'low'}}">
+        <image class="fac" src="/images/smiley-bad.png"></image>
+      </view>
+    </view>
+  <!-- </view>
+   <view wx:elsif>u</view> -->
+</view>
+
+
+
+<view wx:if="{{food.protein_nutrient_level !== '0'}}">
+  <view class="nutrients">
+    <view class="nutrient-icon">
+      <image class="icons" src="/images/protein_icon.png"></image>
+    </view>
+    <view class="nutrient-text">
+      <view class="h3">Protein</view>
+      <view class="h4">{{food.protein_nutrient_level}}</view>
+    </view>
+    <view class="data">{{food.protein_quantity}} g</view>
+    <view class="face-nutrient">
+      <view wx:if="{{food.protein_nutrient_level == 'high'}}">
+        <image class="fac" src="/images/smiley-good.png"></image>
+      </view>
+    <view wx:elif="{{food.protein_nutrient_level == 'moderate'}}">
+      <image class="fac"  src="/images/smiley-medium.png"></image></view>
+    <view wx:elif="{{food.protein_nutrient_level == 'low'}}">
+      <image class="fac" src="/images/smiley-bad.png"></image></view>
+    </view>
   </view>
 </view>
-<view class="nutrients">
-  <view class="nutrient-icon">
-    <image class="icons" src="/images/protein_icon.png"></image>
-  </view>
-  <view class="nutrient-text">
-    <view class="h3">Protein</view>
-    <view class="h4">{{food.protein_nutrient_level}}</view>
-  </view>
-  <view class="data">{{food.protein_quantity}} g</view>
-  <view class="face-nutrient">
-<view wx:if="{{food.protein_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
-<view wx:elif="{{food.protein_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
-<view wx:elif="{{food.protein_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
-  </view>
-</view> -->
+
 
 
 <!-- <table>
