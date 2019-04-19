@@ -2,16 +2,18 @@
 
 <view class="product-header">
   <view class="image">
-    <image class="product-img" src="https://picsum.photos/200/300" ></image> 
+    <image class="product-img" src="{{food.image_url}}" ></image> 
   </view>
   <view class="product-info">
-    <view class="h2">Product Name</view>
+    <view class="h2">{{food.product_name}}</view>
     <view class="brand-category-face">
       <view class="brand-n-category">     
-        <view class="p">Brand</view>
-        <view class="p">Medium</view>
+        <view class="p">{{food.product_name}}</view>
+  <!-- If statement here: if nutrition_grade = a transform into good/mediumm...-->
+        <view class="p">{{food.nutrition_grade}}</view>
       </view>
       <view class="face">
+  <!-- If statement here: if nutrition_grade = a transform into the face..-->
         <image class="faces" src="/images/smiley-very-good.png"></image>
       </view>
     </view>
@@ -26,16 +28,13 @@
 <view class="ingredients">
   <view>
     <view class="h3">Ingredients</view>
-    <view class="h4">Coconut, carrots, flour, artificial </view>
+    <view class="h4">{{food.ingredients}}</view>
   </view>
-  <view class="add1">
-    <image class="add" src="/images/add.png"></image>
-  </view>
+  <view class="add1"><image class="add" src="/images/add.png"></image></view>
 </view>
 
 <view class="divider1">
-  <view class="header">Advantages
-  </view>
+  <view class="header">Advantages</view>
 </view>
 
 <view class="nutrients">
@@ -43,49 +42,43 @@
     <image class="icons" src="/images/salt_icon.png"></image>
   </view>
   <view class="nutrient-text">
-    <view class="h3">Calories
-    </view>
-    <view class="h4">Good 
-    </view>
+    <view class="h3">Calories</view>
+  <!-- If statement here: if nutrition_grade = a transform into good/mediumm...-->
+    <view class="h4">{{food.calories_nutrient_level}}</view>
   </view>
-  <view class="data">8 mg
-  </view>
+  <view class="data">{{food.calories_quantity}}</view>
   <view class="face-nutrient">
+<!-- If statement here: if nutrition_grade = a transform into the face..-->
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
 </view>
+
+
 <view class="nutrients">
   <view class="nutrient-icon">
     <image class="icons" src="/images/salt_icon.png"></image>
   </view>
   <view class="nutrient-text">
-    <view class="h3">Calories
-    </view>
-    <view class="h4">Good 
-    </view>
+    <view class="h3">Sugar</view>
+    <view class="h4">Good</view>
   </view>
-  <view class="data">8 mg
-  </view>
+  <view class="data">8 mg</view>
   <view class="face-nutrient">
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
 </view>
 <view class="divider2">
-  <view class="header">Inconvenient
-  </view>
+  <view class="header">Inconvenient</view>
 </view>
 <view class="nutrients">
   <view class="nutrient-icon">
     <image class="icons" src="/images/salt_icon.png"></image>
   </view>
   <view class="nutrient-text">
-    <view class="h3">Calories
-    </view>
-    <view class="h4">Good 
-    </view>
+    <view class="h3">Saturated Fat</view>
+    <view class="h4">Good</view>
   </view>
-  <view class="data">8 mg
-  </view>
+  <view class="data">8 mg</view>
   <view class="face-nutrient">
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
@@ -95,13 +88,10 @@
     <image class="icons" src="/images/salt_icon.png"></image>
   </view>
   <view class="nutrient-text">
-    <view class="h3">Calories
-    </view>
-    <view class="h4">Good 
-    </view>
+    <view class="h3">Salt</view>
+    <view class="h4">Good</view>
   </view>
-  <view class="data">8 mg
-  </view>
+  <view class="data">8 mg</view>
   <view class="face-nutrient">
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
@@ -111,13 +101,10 @@
     <image class="icons" src="/images/salt_icon.png"></image>
   </view>
   <view class="nutrient-text">
-    <view class="h3">Calories
-    </view>
-    <view class="h4">Good 
-    </view>
+    <view class="h3">Fiber</view>
+    <view class="h4">Good</view>
   </view>
-  <view class="data">8 mg
-  </view>
+  <view class="data">8 mg</view>
   <view class="face-nutrient">
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
@@ -127,13 +114,10 @@
     <image class="icons" src="/images/salt_icon.png"></image>
   </view>
   <view class="nutrient-text">
-    <view class="h3">Calories
-    </view>
-    <view class="h4">Good 
-    </view>
+    <view class="h3">Protein</view>
+    <view class="h4">Good</view>
   </view>
-  <view class="data">8 mg
-  </view>
+  <view class="data">8 mg</view>
   <view class="face-nutrient">
     <image class="fac" src="/images/smiley-very-good.png"></image>
   </view>
