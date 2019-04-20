@@ -2,7 +2,7 @@
 const app = getApp()
 
 Page({
-
+  
   /**
    * Page initial data
    */
@@ -11,6 +11,7 @@ Page({
     hasUserInfo: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     userId: wx.getStorageSync('user_id')
+    
   },
 
   /**
@@ -83,7 +84,11 @@ Page({
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
+    console.log('onPullDownRefresh')
 
+    // wx.reLaunch({
+    //  url: '../profile/profile',
+    // })
   },
 
   /**

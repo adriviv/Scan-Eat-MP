@@ -1,4 +1,8 @@
-<!-- Product Header-->
+<navigator open-type="navigateBack"
+    url="../favorite/favorite"
+    hover-class="navigator-hover"
+  >hello
+  </navigator><!-- Product Header-->
 
 <view class="product-header">
   <view class="image">

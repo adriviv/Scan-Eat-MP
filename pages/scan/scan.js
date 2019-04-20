@@ -5,6 +5,8 @@ Page({
    * Page initial data
    */
   data: {
+    userId: wx.getStorageSync('user_id')
+
   },
 
   /**
@@ -12,10 +14,7 @@ Page({
    */
   onLoad: function (options) {
 
-  },
-
-  
-  bindScan: function (options) {
+  let that = this
   
     wx.scanCode({
       /** onlyFromCamera: true, */
@@ -39,10 +38,26 @@ Page({
           duration: 3000
         });
 
-        setTimeout(function () {
-          wx.reLaunch({
-            url: '/pages/profile/profile',
-          })
+
+        setTimeout(function (e) {
+          wx.request({
+            url: `http://localhost:3000/api/v1/users/${that.data.userId}/scans`,
+            success: res => {
+              console.log('Product Data', res)
+
+              that.setData(res.data)
+             
+              var last = res.data.scans[0]
+
+              wx.navigateTo({
+                url: `../show/show?id=${last.id}`
+              });
+              //wx.setNavigationBarTitle({
+              // title: page.data.name,   
+            }
+          }) 
+          
+         
         }, 3000);
 
        

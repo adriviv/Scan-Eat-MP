@@ -12,6 +12,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    
     console.log('yihouuuuuuu', options)
     const page = this
 
@@ -29,14 +30,12 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
   },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
   },
 
   /**
@@ -50,9 +49,11 @@ Page({
    * Lifecycle function--Called when page unload
    */
   onUnload: function () {
-
+    wx.reLaunch({
+      url: '../profile/profile',
+    })
+    
   },
-
   /**
    * Page event handler function--Called when user drop down
    */
