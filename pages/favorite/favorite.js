@@ -8,7 +8,6 @@ Page({
 
   },
 
- 
 
   /**
    * Lifecycle function--Called when page load
@@ -17,12 +16,14 @@ Page({
 
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
 
+  
+
+  onReady: function () {
+  
+  
   },
+
 
   /**
    * Lifecycle function--Called when page show

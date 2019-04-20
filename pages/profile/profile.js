@@ -10,8 +10,8 @@ Page({
     userInfo: {},
     hasUserInfo: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    userId: wx.getStorageSync('user_id')
-    
+    userId: wx.getStorageSync('user_id'),
+    enablePullDownRefresh: "true"
   },
 
   /**

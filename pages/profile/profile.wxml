@@ -26,20 +26,39 @@
 
 <view class="scan-container">
   <view wx:for="{{scans}}" wx:for-item="scan" wx:key="scan.id" bindtap="showScan"  data-scan-id="{{scan.id}}">
+
+
     <view class="card-product">
       <view class="image">
         <image src="{{scan.food.image_url}}" class="product-img"></image> 
       </view>
-      <view class="info-n-smiley">
-        <view class="card-product-infos">
+      <view class="sub_card">
+        <view class="info-n-smiley card-product-infos">
           <view class="h2">{{scan.food.product_name}}</view>
           <view class="p">{{scan.food.brand}}</view>
-          <view class="classification">{{scan.food.nutrition_grade}}
+        </view>
+        <view class="classification">
+          <view class="classification-text">{{scan.food.nutrition_grade}}</view>
+          <view wx:if="{{scan.food.nutrition_grade == 'Very Bad'}}">
+            <image class="dot" src="/images/red_dot.png"></image> 
+          </view>
+           <view wx:if="{{scan.food.nutrition_grade == 'Bad'}}">
+            <image class="dot" src="/images/orange-dot.png"></image> 
+          </view>
+           <view wx:if="{{scan.food.nutrition_grade == 'Medium'}}">
+            <image class="dot" src="/images/yellow-dot.png"></image> 
+          </view>
+           <view wx:if="{{scan.food.nutrition_grade == 'Good'}}">
             <image class="dot" src="/images/green-dot.png"></image> 
+          </view>
+           <view wx:if="{{scan.food.nutrition_grade == 'Very Good'}}">
+            <image class="dot" src="/images/greener-dot.png"></image> 
           </view>
         </view>
       </view>
     </view>
+
+
   </view>
 </view>
 

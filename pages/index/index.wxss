@@ -6,28 +6,33 @@
   height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  width: 200rpx;
+  height: 200rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
 
 .userinfo-nickname {
   color: #aaa;
+  position: fixed;
+  top: 455rpx
+
 }
 
 .usermotto {
   margin-top: 200px;
 }
+
+.btn {
+  position: fixed;
+  top: 600rpx;
+  color: #EA7B4C;
+  border: 4px solid #EA7B4C;
+  border-radius: 25px;
+  font-family: bold;
+}
+
