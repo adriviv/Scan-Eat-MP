@@ -38,7 +38,7 @@
   <view class="header">Healthy</view>
 </view>
 
-<view class="card_container">
+<view class="calories card_container">
   <view class="nutrients">
     <view class="nutrient-icon">
       <image class="icons" src="/images/calories_icon.png"></image>
@@ -63,33 +63,31 @@
       </view>
     </view>
   </view>
-  <view class='calories_bar'>
+  <view class='percentage_bar'>
     <view class='range' wx:if="{{food.category == 'beverage'}}">
-      <view>0</view><view>1</view><view>14</view><view>35</view><view>65</view>
+      <view>0</view><view>1</view><view>14</view><view>35</view><view>65+</view>
     </view>
-    <view class='range' wx:else><view>0</view><view>160</view>
-      <view>360</view><view>560</view><view>800</view>
+    <view class='range' wx:else>
+        <view>0</view><view>160</view><view>360</view><view>560</view><view>800+</view>
     </view>
- <view class='progress_bar'>
-    <view wx:if="{{food.calories_percentage < '25'}}">
-        <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="#3ca860" active />
+    <view class='progress_bar'>
+        <view wx:if="{{food.calories_percentage < '25'}}">
+            <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="#3ca860" active />
+        </view>
+        <view wx:if="{{food.calories_percentage >= '25' && food.calories_percentage < '50'}}">
+            <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="#6cde89" active />
+        </view>
+        <view wx:if="{{food.calories_percentage >= '50' && food.calories_percentage < '75'}}">
+          <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="orange" active />
+        </view>
+        <view wx:if="{{food.calories_percentage >= '75'}}">
+          <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="red" active />
+        </view>
+      </view> 
     </view>
-    <view wx:if="{{food.calories_percentage >= '25' && food.calories_percentage < '50'}}">
-        <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="#6cde89" active />
-      </view>
-      <view wx:if="{{food.calories_percentage >= '50' && food.calories_percentage < '75'}}">
-        <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="orange" active />
-      </view>
-    <view wx:if="{{food.calories_percentage > '75'}}">
-      <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="red" active />
-    </view>
-  </view>
-    
-
-  </view>
 </view>
 
-<view class="card_container">
+<view class="sugar card_container">
   <view class="nutrients">
     <view class="nutrient-icon">
       <image class="icons" src="/images/sugar_icon.png"></image>
@@ -105,15 +103,37 @@
       <view wx:elif="{{food.sugar_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
     </view>
   </view>
+  <view class='percentage_bar'>
+    <view class='range' wx:if="{{food.category == 'beverage'}}">
+      <view>0</view><view>1.5</view><view>3</view><view>7</view><view>13+</view>
+    </view>
+    <view class='range' wx:else>
+        <view>0</view><view>9</view><view>18</view><view>31</view><view>45+</view>
+    </view>
+    <view class='progress_bar'>
+        <view wx:if="{{food.sugar_percentage < '25'}}">
+            <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="#3ca860" active />
+        </view>
+        <view wx:if="{{food.sugar_percentage >= '25' && food.sugar_percentage < '50'}}">
+            <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="#6cde89" active />
+        </view>
+        <view wx:if="{{food.sugar_percentage >= '50' && food.sugar_percentage < '75'}}">
+          <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="orange" active />
+        </view>
+        <view wx:if="{{food.sugar_percentage > '75'}}">
+          <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="red" active />
+        </view>
+      </view> 
+    </view>
 </view>
 
-<view class="card_container">
+<view class=" separator card_container">
   <view class="divider2">
     <view class="header">Unhealthy</view>
   </view>
 </view>
 
-<view class="card_container">
+<view class="fat card_container">
   <view class="nutrients">
     <view class="nutrient-icon">
       <image class="icons" src="/images/fat_icon.png"></image>
@@ -129,9 +149,28 @@
       <view wx:elif="{{food.saturated_fat_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
     </view>
   </view>
+  <view class='percentage_bar'>
+    <view class="range">
+      <view>0</view><view>2</view><view>4</view><view>7</view><view>10+</view>
+    </view>
+    <view class='progress_bar'>
+        <view wx:if="{{food.saturated_fat_percentage < '25'}}">
+            <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="#3ca860" active />
+        </view>
+        <view wx:if="{{food.saturated_fat_percentage >= '25' && food.saturated_fat_percentage < '50'}}">
+            <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="#6cde89" active />
+        </view>
+        <view wx:if="{{food.saturated_fat_percentage >= '50' && food.saturated_fat_percentage < '75'}}">
+          <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="orange" active />
+        </view>
+        <view wx:if="{{food.saturated_fat_percentage > '75'}}">
+          <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="red" active />
+        </view>
+      </view> 
+    </view>
 </view>
 
-<view class="card_container">
+<view class="salt card_container">
   <view class="nutrients">
     <view class="nutrient-icon">
       <image class="icons" src="/images/salt_icon.png"></image>
@@ -147,11 +186,30 @@
       <view wx:elif="{{food.salt_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
     </view>
   </view>
+  <view class='percentage_bar'>
+    <view class="range">
+      <view>0</view><view>0.46</view><view>0.92</view><view>1.62</view><view>2.3+</view>
+    </view>
+    <view class='progress_bar'>
+        <view wx:if="{{food.salt_percentage < '25'}}">
+            <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="#3ca860" active />
+        </view>
+        <view wx:if="{{food.salt_percentage >= '25' && food.salt_percentage < '50'}}">
+            <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="#6cde89" active />
+        </view>
+        <view wx:if="{{food.salt_percentage >= '50' && food.salt_percentage < '75'}}">
+          <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="orange" active />
+        </view>
+        <view wx:if="{{food.salt_percentage > '75'}}">
+          <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="red" active />
+        </view>
+      </view> 
+    </view>
 </view>
 
 
 <view wx:if="{{food.fiber_nutrient_level != null}}">
-  <view class="card_container">
+  <view class="fiber card_container">
     <view class="nutrients">
         <view class="nutrient-icon">
           <image class="icons" src="/images/fiber_icon.png"></image>
@@ -171,6 +229,19 @@
         </view>
     </view>
   </view>
+  <view class='percentage_bar'>
+    <view class="range">
+      <view>0</view><view>3.5</view><view>7+</view>
+    </view>
+    <view class='progress_bar'>
+        <view wx:if="{{food.fiber_percentage < '50'}}">
+            <progress percent="{{food.fiber_percentage}}" stroke-width="10"  color="#4fea76" active />
+        </view>
+        <view wx:if="{{food.fiber_percentage >= '50'}}">
+          <progress percent="{{food.fiber_percentage}}" stroke-width="10"  color="#23bf00" active />
+        </view>
+      </view> 
+    </view>
 </view>
 
 
@@ -195,6 +266,19 @@
       </view>
     </view>
   </view>
+  <view class='percentage_bar'>
+    <view class="range">
+      <view>0</view><view>8</view><view>16+</view>
+    </view>
+    <view class='progress_bar'>
+        <view wx:if="{{food.protein_percentage < '50'}}">
+            <progress percent="{{food.protein_percentage}}" stroke-width="10"  color="#4fea76" active />
+        </view>
+        <view wx:if="{{food.protein_percentage >= '50'}}">
+          <progress percent="{{food.protein_percentage}}" stroke-width="10"  color="#23bf00" active />
+        </view>
+      </view> 
+    </view>
 </view>
 
 

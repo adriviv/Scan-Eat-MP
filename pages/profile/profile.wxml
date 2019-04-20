@@ -25,7 +25,7 @@
 <!-- card dual -->  
 
 <view class="scan-container">
-  <view wx:for="{{scans}}" wx:for-item="scan" wx:key="scan.id" bindtap="showScan"  data-scan-id="{{scan.food.id}}">
+  <view wx:for="{{scans}}" wx:for-item="scan" wx:key="scan.id" bindtap="showScan"  data-scan-id="{{scan.id}}">
     <view class="card-product">
       <view class="image">
         <image src="{{scan.food.image_url}}" class="product-img"></image> 
