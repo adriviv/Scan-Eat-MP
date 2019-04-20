@@ -33,9 +33,19 @@ Page({
           data: food,
         })
 
-        wx.reLaunch({
-          url: `../profile/profile`,
-        })
+        wx.showToast({
+          title: 'Succeed',
+          icon: 'success',
+          duration: 3000
+        });
+
+        setTimeout(function () {
+          wx.reLaunch({
+            url: '/pages/profile/profile',
+          })
+        }, 3000);
+
+       
       },
       error: () => {
         console.log('error')
