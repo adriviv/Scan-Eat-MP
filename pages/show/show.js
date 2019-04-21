@@ -12,11 +12,14 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    
+    console.log('yihouuuuuuu', options)
     const page = this
 
     wx.request({
       url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans/${options.id}`,
       success: res => {
+        console.log('please', res)
         page.setData(res.data)
         //wx.setNavigationBarTitle({
         // title: page.data.name,
@@ -27,14 +30,12 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
   },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
   },
 
   /**
@@ -48,9 +49,11 @@ Page({
    * Lifecycle function--Called when page unload
    */
   onUnload: function () {
-
+    wx.reLaunch({
+      url: '../profile/profile',
+    })
+    
   },
-
   /**
    * Page event handler function--Called when user drop down
    */

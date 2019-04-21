@@ -16,8 +16,21 @@
       </view>
       <view class="face">
   <!-- If statement here: if nutrition_grade = a transform into the face..-->
-        <image class="faces" src="/images/smiley-very-good.png"></image>
-      </view>
+<view wx:if="{{food.nutrition_grade == 'Very Bad'}}">
+            <image class="faces" src="/images/smiley-bad.png"></image> 
+          </view>
+           <view wx:if="{{food.nutrition_grade == 'Bad'}}">
+            <image class="faces" src="/images/smiley-medium-bad.png"></image> 
+          </view>
+           <view wx:if="{{food.nutrition_grade == 'Medium'}}">
+            <image class="faces" src="/images/smiley-medium.png"></image> 
+          </view>
+           <view wx:if="{{food.nutrition_grade == 'Good'}}">
+            <image class="faces" src="/images/smiley-good.png"></image> 
+          </view>
+           <view wx:if="{{food.nutrition_grade == 'Very Good'}}">
+            <image class="faces" src="/images/smiley-very-good.png"></image> 
+          </view>      </view>
     </view>
   </view>
   <view class="star">
@@ -27,136 +40,453 @@
 
 <!-- Product finish-->
 
-<view class="ingredients">
-  <view>
-    <view class="h3">Ingredients</view>
-    <view class="h4">{{food.ingredients}}</view>
-  </view>
-  <view class="add1"><image class="add" src="/images/add.png"></image></view>
-</view>
 
+<view class="allergens">
+  <view class="allergens-header">
+    <view class="h3">Allergens</view>
+    <image bindtap="list" class="dropdown" src="/images/dropdown-down.png"></image>
+  </view>
+    <view class="allergens-subdiv">
+    <image class="icons" src="/images/warning.png"></image>
+    <view class="h5">{{food.allergens}}</view>
+    </view>
+</view>
 
 
 <view class="divider1">
-  <view class="header">Advantages</view>
-</view>
-
-<view class="nutrients">
-  <view class="nutrient-icon">
-    <image class="icons" src="/images/calories_icon.png"></image>
-  </view>
-  <view class="nutrient-text">
-    <view class="h3">Calories</view>
-  <!-- If statement here: if nutrition_grade = a transform into good/mediumm...-->
-    <view class="h4">{{food.calories_nutrient_level}}</view>
-  </view>
-  <view class="data">{{food.calories_quantity}} kcal</view>
-  <view class="face-nutrient">
-<view wx:if="{{food.calories_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
-<view wx:elif="{{food.calories_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
-<view wx:elif="{{food.calories_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
-  </view>
-</view>
-
-<view class="nutrients">
-  <view class="nutrient-icon">
-    <image class="icons" src="/images/sugar_icon.png"></image>
-  </view>
-  <view class="nutrient-text">
-    <view class="h3">Sugar</view>
-    <view class="h4">{{food.sugar_nutrient_level}}</view>
-  </view>
-  <view class="data">{{food.sugar_quantity}} g</view>
-  <view class="face-nutrient">
-<view wx:if="{{food.sugar_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
-<view wx:elif="{{food.sugar_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
-<view wx:elif="{{food.sugar_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
-  </view>
-</view>
-<view class="divider2">
-  <view class="header">Inconvenient</view>
-</view>
-<view class="nutrients">
-  <view class="nutrient-icon">
-    <image class="icons" src="/images/fat_icon.png"></image>
-  </view>
-  <view class="nutrient-text">
-    <view class="h3">Saturated Fat</view>
-    <view class="h4">{{food.saturated_fat_nutrient_level}}</view>
-  </view>
-  <view class="data">{{food.saturated_fat_quantity}} g</view>
-  <view class="face-nutrient">
-<view wx:if="{{food.saturated_fat_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
-<view wx:elif="{{food.saturated_fat_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
-<view wx:elif="{{food.saturated_fat_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
-  </view>
-</view>
-<view class="nutrients">
-  <view class="nutrient-icon">
-    <image class="icons" src="/images/salt_icon.png"></image>
-  </view>
-  <view class="nutrient-text">
-    <view class="h3">Salt</view>
-    <view class="h4">{{food.salt_nutrient_level}}</view>
-  </view>
-  <view class="data">{{food.salt_quantity}} g</view>
-  <view class="face-nutrient">
-<view wx:if="{{food.salt_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
-<view wx:elif="{{food.salt_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
-<view wx:elif="{{food.salt_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
-  </view>
+  <view class="header">Healthy</view>
 </view>
 
 
-
-<view class="nutrients">
- <!-- <view wx:if="{{ffood.fiber_quantity !== '0'}}"> -->
-    <view class="nutrient-icon">
-      <image class="icons" src="/images/fiber_icon.png"></image>
+<view wx:if="{{food.fiber_nutrient_level != null}}">
+  <view class="fiber card_container">
+    <view class="nutrients">
+        <view class="nutrient-icon">
+          <image class="icons" src="/images/fiber_icon.png"></image>
+        </view>
+        <view class="nutrient-text">
+          <view class="h3">Fiber</view>
+          <view class="h4">{{food.fiber_nutrient_level}}</view>
+        </view>
+        <view class="data">{{food.fiber_quantity}} g</view>
+        <view class="face-nutrient">
+          <view wx:if="{{food.fiber_nutrient_level == 'high'}}">
+            <image class="fac" src="/images/smiley-good.png"></image>
+          </view>
+          <view wx:if="{{food.fiber_nutrient_level == 'very_high'}}">
+            <image class="fac" src="/images/smiley-very-good.png"></image>
+          </view>
+        </view>
     </view>
-    <view class="nutrient-text">
-      <view class="h3">Fiber</view>
-      <view class="h4">{{food.fiber_nutrient_level}}</view>
+  </view>
+  <view class='percentage_bar'>
+    <view class="range">
+      <view>0</view><view>3.5</view><view>7</view>
     </view>
-    <view class="data">{{food.fiber_quantity}} g</view>
-    <view class="face-nutrient">
-      <view wx:if="{{food.fiber_nutrient_level == 'high'}}">
-        <image class="fac" src="/images/smiley-good.png"></image>
+    <view class='progress_bar'>
+        <view wx:if="{{food.fiber_percentage < '50'}}">
+            <progress percent="{{food.fiber_percentage}}" stroke-width="10"  color="7ff556" active />
+        </view>
+        <view wx:if="{{food.fiber_percentage >= '50'}}">
+          <progress percent="{{food.fiber_percentage}}" stroke-width="10"  color="#23bf00" active />
+        </view>
+      </view> 
+    </view>
+</view>
+
+
+<view wx:if="{{food.protein_nutrient_level != null}}">
+  <view class="card_container">
+    <view class="nutrients">
+      <view class="nutrient-icon">
+        <image class="icons" src="/images/protein_icon.png"></image>
       </view>
-      <view wx:elif="{{food.fiber_nutrient_level == 'moderate'}}">
-        <image class="fac" src="/images/smiley-medium.png"></image>
+      <view class="nutrient-text">
+        <view class="h3">Protein</view>
+        <view class="h4">{{food.protein_nutrient_level}}</view>
       </view>
-      <view wx:elif="{{food.fiber_nutrient_level == 'low'}}">
-        <image class="fac" src="/images/smiley-bad.png"></image>
+      <view class="data">{{food.protein_quantity}} g</view>
+      <view class="face-nutrient">
+        <view wx:if="{{food.protein_nutrient_level == 'high'}}">
+          <image class="fac" src="/images/smiley-good.png"></image>
+        </view>
+        <view wx:if="{{food.protein_nutrient_level == 'very_high'}}">
+          <image class="fac" src="/images/smiley-very-good.png"></image>
+        </view>      
       </view>
     </view>
-  <!-- </view>
-   <view wx:elsif>u</view> -->
+  </view>
+  <view class='percentage_bar'>
+    <view class="range">
+      <view>0</view><view>8</view><view>16</view>
+    </view>
+    <view class='progress_bar'>
+        <view wx:if="{{food.protein_percentage < '50'}}">
+            <progress percent="{{food.protein_percentage}}" stroke-width="10"  color="7ff556" active />
+        </view>
+        <view wx:if="{{food.protein_percentage >= '50'}}">
+          <progress percent="{{food.protein_percentage}}" stroke-width="10"  color="#23bf00" active />
+        </view>
+      </view> 
+    </view>
 </view>
 
-
-
-<view wx:if="{{food.protein_nutrient_level !== '0'}}">
-  <view class="nutrients">
-    <view class="nutrient-icon">
-      <image class="icons" src="/images/protein_icon.png"></image>
-    </view>
-    <view class="nutrient-text">
-      <view class="h3">Protein</view>
-      <view class="h4">{{food.protein_nutrient_level}}</view>
-    </view>
-    <view class="data">{{food.protein_quantity}} g</view>
-    <view class="face-nutrient">
-      <view wx:if="{{food.protein_nutrient_level == 'high'}}">
-        <image class="fac" src="/images/smiley-good.png"></image>
+<view wx:if="{{food.calories_percentage < '50'}}">
+  <view class="calories card_container">
+    <view class="nutrients">
+      <view class="nutrient-icon">
+        <image class="icons" src="/images/calories_icon.png"></image>
       </view>
-    <view wx:elif="{{food.protein_nutrient_level == 'moderate'}}">
-      <image class="fac"  src="/images/smiley-medium.png"></image></view>
-    <view wx:elif="{{food.protein_nutrient_level == 'low'}}">
-      <image class="fac" src="/images/smiley-bad.png"></image></view>
+      <view class="nutrient-text">
+        <view class="h3">Calories</view>
+        <view class="h4">{{food.calories_nutrient_level}}</view>
+      </view>
+      <view class="data">{{food.calories_quantity}} kcal</view>
+      <view class="face-nutrient">
+        <view wx:if="{{food.calories_nutrient_level == 'very_low'}}">
+          <image class="fac" src="/images/smiley-good.png"></image>
+        </view>
+        <view wx:if="{{food.calories_nutrient_level == 'low'}}">
+          <image class="fac" src="/images/smiley-good.png"></image>
+        </view>
+        <view wx:elif="{{food.calories_nutrient_level == 'moderate'}}">
+          <image class="fac" src="/images/smiley-medium.png"></image>
+        </view>
+        <view wx:elif="{{food.calories_nutrient_level == 'high'}}">
+          <image class="fac" src="/images/smiley-bad.png"></image>
+        </view>
+      </view>
     </view>
+    <view class='percentage_bar'>
+      <view class='range' wx:if="{{food.category == 'beverage'}}">
+        <view>0</view><view>1</view><view>14</view><view>35</view><view>65</view>
+      </view>
+      <view class='range' wx:else>
+          <view>0</view><view>160</view><view>360</view><view>560</view><view>800</view>
+      </view>
+      <view class='progress_bar'>
+          <view wx:if="{{food.calories_percentage < '25'}}">
+              <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="#23bf00" active />
+          </view>
+          <view wx:if="{{food.calories_percentage >= '25' && food.calories_percentage < '50'}}">
+              <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="7ff556" active />
+          </view>
+          <view wx:if="{{food.calories_percentage >= '50' && food.calories_percentage < '75'}}">
+            <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="orange" active />
+          </view>
+          <view wx:if="{{food.calories_percentage >= '75'}}">
+            <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="red" active />
+          </view>
+        </view> 
+      </view>
   </view>
 </view>
+
+<view wx:if="{{food.sugar_percentage < '50'}}">
+  <view class="sugar card_container">
+    <view class="nutrients">
+      <view class="nutrient-icon">
+        <image class="icons" src="/images/sugar_icon.png"></image>
+      </view>
+      <view class="nutrient-text">
+        <view class="h3">Sugar</view>
+        <view class="h4">{{food.sugar_nutrient_level}}</view>
+      </view>
+      <view class="data">{{food.sugar_quantity}} g</view>
+      <view class="face-nutrient">
+        <view wx:if="{{food.sugar_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
+        <view wx:elif="{{food.sugar_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
+        <view wx:elif="{{food.sugar_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
+      </view>
+    </view>
+    <view class='percentage_bar'>
+      <view class='range' wx:if="{{food.category == 'beverage'}}">
+        <view>0</view><view>1.5</view><view>3</view><view>7</view><view>13</view>
+      </view>
+      <view class='range' wx:else>
+          <view>0</view><view>9</view><view>18</view><view>31</view><view>45</view>
+      </view>
+      <view class='progress_bar'>
+          <view wx:if="{{food.sugar_percentage < '25'}}">
+              <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="#23bf00" active />
+          </view>
+          <view wx:if="{{food.sugar_percentage >= '25' && food.sugar_percentage < '50'}}">
+              <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="7ff556" active />
+          </view>
+          <view wx:if="{{food.sugar_percentage >= '50' && food.sugar_percentage < '75'}}">
+            <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="orange" active />
+          </view>
+          <view wx:if="{{food.sugar_percentage > '75'}}">
+            <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="red" active />
+          </view>
+        </view> 
+      </view>
+  </view>
+</view>
+
+<view wx:if="{{food.saturated_fat_percentage < '50'}}">
+  <view class="fat card_container">
+    <view class="nutrients">
+      <view class="nutrient-icon">
+        <image class="icons" src="/images/fat_icon.png"></image>
+      </view>
+      <view class="nutrient-text">
+        <view class="h3">Saturated Fat</view>
+        <view class="h4">{{food.saturated_fat_nutrient_level}}</view>
+      </view>
+      <view class="data">{{food.saturated_fat_quantity}} g</view>
+      <view class="face-nutrient">
+        <view wx:if="{{food.saturated_fat_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
+        <view wx:elif="{{food.saturated_fat_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
+        <view wx:elif="{{food.saturated_fat_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
+      </view>
+    </view>
+    <view class='percentage_bar'>
+      <view class="range">
+        <view>0</view><view>2</view><view>4</view><view>7</view><view>10</view>
+      </view>
+      <view class='progress_bar'>
+          <view wx:if="{{food.saturated_fat_percentage < '25'}}">
+              <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="#23bf00" active />
+          </view>
+          <view wx:if="{{food.saturated_fat_percentage >= '25' && food.saturated_fat_percentage < '50'}}">
+              <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="7ff556" active />
+          </view>
+          <view wx:if="{{food.saturated_fat_percentage >= '50' && food.saturated_fat_percentage < '75'}}">
+            <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="orange" active />
+          </view>
+          <view wx:if="{{food.saturated_fat_percentage > '75'}}">
+            <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="red" active />
+          </view>
+        </view> 
+      </view>
+  </view>
+</view>
+
+<view wx:if="{{food.salt_percentage < '50'}}">
+  <view class="salt card_container">
+    <view class="nutrients">
+      <view class="nutrient-icon">
+        <image class="icons" src="/images/salt_icon.png"></image>
+      </view>
+      <view class="nutrient-text">
+        <view class="h3">Salt</view>
+        <view class="h4">{{food.salt_nutrient_level}}</view>
+      </view>
+      <view class="data">{{food.salt_quantity}} mg</view>
+      <view class="face-nutrient">
+        <view wx:if="{{food.salt_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
+        <view wx:elif="{{food.salt_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
+        <view wx:elif="{{food.salt_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
+      </view>
+    </view>
+    <view class='percentage_bar'>
+      <view class="range">
+        <view>0</view><view>46</view><view>92</view><view>62</view><view>230</view>
+      </view>
+      <view class='progress_bar'>
+          <view wx:if="{{food.salt_percentage < '25'}}">
+              <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="#23bf00" active />
+          </view>
+          <view wx:if="{{food.salt_percentage >= '25' && food.salt_percentage < '50'}}">
+              <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="7ff556" active />
+          </view>
+          <view wx:if="{{food.salt_percentage >= '50' && food.salt_percentage < '75'}}">
+            <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="orange" active />
+          </view>
+          <view wx:if="{{food.salt_percentage > '75'}}">
+            <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="red" active />
+          </view>
+        </view> 
+      </view>
+  </view>
+</view>
+
+
+
+<view class=" separator card_container">
+  <view class="divider2">
+    <view class="header">Unhealthy</view>
+  </view>
+</view>
+
+<view wx:if="{{food.calories_percentage >= '50'}}">
+  <view class="calories card_container">
+    <view class="nutrients">
+      <view class="nutrient-icon">
+        <image class="icons" src="/images/calories_icon.png"></image>
+      </view>
+      <view class="nutrient-text">
+        <view class="h3">Calories</view>
+        <view class="h4">{{food.calories_nutrient_level}}</view>
+      </view>
+      <view class="data">{{food.calories_quantity}} kcal</view>
+      <view class="face-nutrient">
+        <view wx:if="{{food.calories_nutrient_level == 'very_low'}}">
+          <image class="fac" src="/images/smiley-good.png"></image>
+        </view>
+        <view wx:if="{{food.calories_nutrient_level == 'low'}}">
+          <image class="fac" src="/images/smiley-good.png"></image>
+        </view>
+        <view wx:elif="{{food.calories_nutrient_level == 'moderate'}}">
+          <image class="fac" src="/images/smiley-medium.png"></image>
+        </view>
+        <view wx:elif="{{food.calories_nutrient_level == 'high'}}">
+          <image class="fac" src="/images/smiley-bad.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class='percentage_bar'>
+      <view class='range' wx:if="{{food.category == 'beverage'}}">
+        <view>0</view><view>1</view><view>14</view><view>35</view><view>65</view>
+      </view>
+      <view class='range' wx:else>
+          <view>0</view><view>160</view><view>360</view><view>560</view><view>800</view>
+      </view>
+      <view class='progress_bar'>
+          <view wx:if="{{food.calories_percentage < '25'}}">
+              <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="#23bf00" active />
+          </view>
+          <view wx:if="{{food.calories_percentage >= '25' && food.calories_percentage < '50'}}">
+              <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="7ff556" active />
+          </view>
+          <view wx:if="{{food.calories_percentage >= '50' && food.calories_percentage < '75'}}">
+            <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="orange" active />
+          </view>
+          <view wx:if="{{food.calories_percentage >= '75'}}">
+            <progress percent="{{food.calories_percentage}}" stroke-width="10"  color="red" active />
+          </view>
+        </view> 
+      </view>
+  </view>
+</view>
+
+<view wx:if="{{food.sugar_percentage >= '50'}}">
+  <view class="sugar card_container">
+    <view class="nutrients">
+      <view class="nutrient-icon">
+        <image class="icons" src="/images/sugar_icon.png"></image>
+      </view>
+      <view class="nutrient-text">
+        <view class="h3">Sugar</view>
+        <view class="h4">{{food.sugar_nutrient_level}}</view>
+      </view>
+      <view class="data">{{food.sugar_quantity}} g</view>
+      <view class="face-nutrient">
+        <view wx:if="{{food.sugar_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
+        <view wx:elif="{{food.sugar_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
+        <view wx:elif="{{food.sugar_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
+      </view>
+    </view>
+    <view class='percentage_bar'>
+      <view class='range' wx:if="{{food.category == 'beverage'}}">
+        <view>0</view><view>1.5</view><view>3</view><view>7</view><view>13</view>
+      </view>
+      <view class='range' wx:else>
+          <view>0</view><view>9</view><view>18</view><view>31</view><view>45</view>
+      </view>
+      <view class='progress_bar'>
+          <view wx:if="{{food.sugar_percentage < '25'}}">
+              <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="#23bf00" active />
+          </view>
+          <view wx:if="{{food.sugar_percentage >= '25' && food.sugar_percentage < '50'}}">
+              <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="7ff556" active />
+          </view>
+          <view wx:if="{{food.sugar_percentage >= '50' && food.sugar_percentage < '75'}}">
+            <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="orange" active />
+          </view>
+          <view wx:if="{{food.sugar_percentage > '75'}}">
+            <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="red" active />
+          </view>
+        </view> 
+      </view>
+  </view>
+</view>
+
+<view wx:if="{{food.saturated_fat_percentage >= '50'}}">
+  <view class="fat card_container">
+    <view class="nutrients">
+      <view class="nutrient-icon">
+        <image class="icons" src="/images/fat_icon.png"></image>
+      </view>
+      <view class="nutrient-text">
+        <view class="h3">Saturated Fat</view>
+        <view class="h4">{{food.saturated_fat_nutrient_level}}</view>
+      </view>
+      <view class="data">{{food.saturated_fat_quantity}} g</view>
+      <view class="face-nutrient">
+        <view wx:if="{{food.saturated_fat_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
+        <view wx:elif="{{food.saturated_fat_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
+        <view wx:elif="{{food.saturated_fat_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
+      </view>
+    </view>
+    <view class='percentage_bar'>
+      <view class="range">
+        <view>0</view><view>2</view><view>4</view><view>7</view><view>10</view>
+      </view>
+      <view class='progress_bar'>
+          <view wx:if="{{food.saturated_fat_percentage < '25'}}">
+              <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="#23bf00" active />
+          </view>
+          <view wx:if="{{food.saturated_fat_percentage >= '25' && food.saturated_fat_percentage < '50'}}">
+              <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="7ff556" active />
+          </view>
+          <view wx:if="{{food.saturated_fat_percentage >= '50' && food.saturated_fat_percentage < '75'}}">
+            <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="orange" active />
+          </view>
+          <view wx:if="{{food.saturated_fat_percentage > '75'}}">
+            <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="red" active />
+          </view>
+        </view> 
+      </view>
+  </view>
+</view>
+
+<view wx:if="{{food.salt_percentage >= '50'}}">
+  <view class="salt card_container">
+    <view class="nutrients">
+      <view class="nutrient-icon">
+        <image class="icons" src="/images/salt_icon.png"></image>
+      </view>
+      <view class="nutrient-text">
+        <view class="h3">Salt</view>
+        <view class="h4">{{food.salt_nutrient_level}}</view>
+      </view>
+      <view class="data">{{food.salt_quantity}} mg</view>
+      <view class="face-nutrient">
+        <view wx:if="{{food.salt_nutrient_level == 'low'}}"><image class="fac" src="/images/smiley-good.png"></image></view>
+        <view wx:elif="{{food.salt_nutrient_level == 'moderate'}}"><image class="fac" src="/images/smiley-medium.png"></image></view>
+        <view wx:elif="{{food.salt_nutrient_level == 'high'}}"><image class="fac" src="/images/smiley-bad.png"></image></view>
+      </view>
+    </view>
+    <view class='percentage_bar'>
+      <view class="range">
+        <view>0</view><view>46</view><view>92</view><view>62</view><view>230</view>
+      </view>
+      <view class='progress_bar'>
+          <view wx:if="{{food.salt_percentage < '25'}}">
+              <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="#23bf00" active />
+          </view>
+          <view wx:if="{{food.salt_percentage >= '25' && food.salt_percentage < '50'}}">
+              <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="7ff556" active />
+          </view>
+          <view wx:if="{{food.salt_percentage >= '50' && food.salt_percentage < '75'}}">
+            <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="orange" active />
+          </view>
+          <view wx:if="{{food.salt_percentage > '75'}}">
+            <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="red" active />
+          </view>
+        </view> 
+      </view>
+  </view>
+</view>
+
+<view class="ingredients">
+    <view class="h3">Ingredients</view>
+    <view class="h4">{{food.ingredients}}</view>
+</view>
+
+
 
 
 

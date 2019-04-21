@@ -29,10 +29,12 @@
 }
 .divider {
   height: 45rpx;
-  padding: 10rpx;
+  padding: 10rpx 10rpx 20rpx 10rpx;
   background-color: #EA7B4C;
   color: white;
   font-weight: bold;
+  margin-top: 5rpx; 
+
 }
 .header {
   font-size:40rpx;
@@ -41,6 +43,11 @@
 /* finish Top Header */
 /* Dual card */
 .card-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
   overflow: hidden;
   width: 290rpx;
   height: 460rpx;
@@ -50,34 +57,44 @@
   margin: 20rpx;
 }
 .image {
-  margin: 30rpx;
+  margin: 10rpx 25rpx 25rpx 25rpx ;
   text-align: center;
 }
 .product-img {
-  width: 195rpx;
-  height: 230rpx;
+  width:230rpx;
+  height:230rpx;
 }
 .h2 {
-  font-size: 30rpx;
-  font-weight: bold;
+  font-size:31rpx;
+  font-weight:bold;
+  position:relative;
+  top:-15rpx;
 }
 .p {
-  font-size: 25rpx;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 15rpx;
+font-size:27rpx;
+opacity:.7;
+margin-bottom:0;
+margin-top:15rpx;
+position:relative;
+top:-26rpx;
 }
 .classification {
-  font-size: 25rpx;
-  opacity: .7;
+font-size:33rpx;
+opacity:.8;
+position:relative;
+bottom:9rpx;
+display: flex;
+justify-content: space-between;
+
 }
 .card-product-infos {
 }
 .dot {
-  width: 30rpx;
-  height: 30rpx;
-  margin-left: 20rpx;
+width:55rpx;
+height:55rpx;
+margin-right:10px
 }
+
 .scan-container {
   display: flex;
   flex-wrap: wrap;
@@ -85,5 +102,9 @@
 }
 .face-nutrient-protein {
   width: 15rpx;
+}
+
+.sub_card {
+  height: 200rpx;
 }
 /* Finish Dual Card */
