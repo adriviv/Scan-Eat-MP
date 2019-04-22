@@ -9,9 +9,18 @@ Page({
     hasUserInfo: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     userId: wx.getStorageSync('user_id'),
+    active: 1,
+
   
   },
 
+  hello: function (e) {
+    console.log('super',e)
+    var a = e.currentTarget.dataset
+    this.setData({
+      active: 2
+    })
+  },
 
   /**
    * Lifecycle function--Called when page load
@@ -55,7 +64,6 @@ Page({
     that.canvasRing.showCanvasRing();
     that.canvasRing = that.selectComponent("#canvasVeryGood");
     that.canvasRing.showCanvasRing();
-
   },
 
 
@@ -80,6 +88,7 @@ Page({
 
   },
 
+
   /**
    * Page event handler function--Called when user drop down
    */
@@ -94,6 +103,9 @@ Page({
 
   },
 
+  tapName: function (event) {
+    console.log(event)
+  },
   /**
    * Called when user click on the top right corner to share
    */

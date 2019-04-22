@@ -47,7 +47,7 @@ Page({
 
               that.setData(res.data)
              
-              var last = res.data.scans[0]
+              var last = res.data.scans.slice(-1)[0]
 
               wx.navigateTo({
                 url: `../show/show?id=${last.id}`
