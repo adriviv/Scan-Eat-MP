@@ -68,8 +68,5 @@
 
 
 
-<view bindtap='hello'>click me</view>
-<view wx:if="{{active == '2'}}">
-say hello
-</view>
+
 

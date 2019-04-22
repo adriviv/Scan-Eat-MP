@@ -9,18 +9,10 @@ Page({
     hasUserInfo: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     userId: wx.getStorageSync('user_id'),
-    active: 1,
-
-  
+    active: 1,  
   },
 
-  hello: function (e) {
-    console.log('super',e)
-    var a = e.currentTarget.dataset
-    this.setData({
-      active: 2
-    })
-  },
+
 
   /**
    * Lifecycle function--Called when page load
@@ -93,7 +85,11 @@ Page({
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
-
+    wx.showToast({
+      title: 'Loading',
+      icon: 'loading',
+      duration: 2000
+    })
   },
 
   /**
@@ -109,6 +105,9 @@ Page({
   /**
    * Called when user click on the top right corner to share
    */
+
+  
+
   onShareAppMessage: function () {
 
   }

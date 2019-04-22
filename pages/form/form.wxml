@@ -1,0 +1,12 @@
+<form bindsubmit="bindSubmit">
+      <textarea value="{{name}}" placeholder="name" class="box" name="name" maxlength="-1" auto-height />
+      <textarea value="{{description}}" style="input-size"placeholder="description" class="box" name="description" maxlength="-1" auto-height />
+      <textarea value="{{location}}" style="input-size"placeholder="location" class="box" name="location" maxlength="-1" auto-height />
+      <textarea value="{{category}}" style="input-size"placeholder="category" class="box" name="category" maxlength="-1" auto-height />
+      <textarea value="{{rewards}}" style="input-size"placeholder="rewards" class="box" name="rewards" maxlength="-1" auto-height />
+      <textarea value="{{amount_objective}}" style="input-size"placeholder="amount_objective" class="box"  name="amount_objective" maxlength="-1" auto-height />
+      <textarea value="{{video}}" style="input-size"placeholder="video" class="box" name="video" maxlength="-1" auto-height />
+      <textarea value="{{image}}" style="input-size"placeholder="image" class="box" name="image" maxlength="-1" auto-height />
+      <button class="submit-btn" style="margin-bottom:50px "type="primary" form-type="submit" loading="{{loading}}">Submit
+      </button>
+    </form>
