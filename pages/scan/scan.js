@@ -19,7 +19,7 @@ Page({
     wx.scanCode({
       /** onlyFromCamera: true, */
       success: (res) => {
-        console.log('gffg', res)
+        console.log("super1", res)
         let food = {
           barcode: res.result
         }
@@ -30,72 +30,48 @@ Page({
           url: `http://localhost:3000/api/v1/users/${userId}/scans`,
           method: 'POST',
           data: food,
-        })
 
-        wx.showToast({
-          title: 'Succeed',
-          icon: 'success',
-          duration: 3000
-        });
-
-
-        setTimeout(function (e) {
-          wx.request({
-            url: `http://localhost:3000/api/v1/users/${that.data.userId}/scans`,
-            success: res => {
-              console.log('Product Data', res)
-
-              that.setData(res.data)
-             
-              var last = res.data.scans.slice(-1)[0]
-              console.log(last)
-              wx.navigateTo({
-                url: `../show/show?id=${last.id}`
+          success:(res) => {
+            if (res.statusCode == 500) {
+              wx.showModal({
+                title: "Product Doesn't exit",
+                content: 'Do you wan to add it ?',
+                success: function (res) {
+                  if (res.confirm) {
+                   wx.reLaunch({
+                     url: '../form/form',
+                   
+                    })
+                  } else if (res.cancel) {
+                    console.log('User clicks cancel')
+                  }
+                }
               });
-              //wx.setNavigationBarTitle({
-              // title: page.data.name,   
-            }
-          }) 
-          
-         
-        }, 3000);
-
-       
+            } else {
+              wx.showToast({
+                title: 'Succeed',
+                icon: 'success',
+                duration: 3000
+              });
+              setTimeout(function (e) {
+                wx.request({
+                  url: `http://localhost:3000/api/v1/users/${that.data.userId}/scans`,
+                  success: res => {
+                    that.setData(res.data)
+                    var last = res.data.scans.slice(-1)[0]
+                    wx.navigateTo({
+                      url: `../show/show?id=${last.id}`
+                    });   
+                  }
+                })
+              }, 3000);
+            } 
+          },
+        }) 
       },
-      error: () => {
-        console.log('error')
-      }
     })
   },
 
-
-
-/**
-  bindSubmit: function (e) {
-    console.log(e)
-    let food = {
-      barcode: e.detail.value.barcode
-    }
-
-    wx.request({
-      url: `http://localhost:3000/api/v1/users/1/foods`,
-      method: 'POST',
-      data: food,
-      success: res => {
-     
-  
-            wx.switchTab({
-          
-              url: '/pages/profile/profile',
-            })
-          
-      } 
-    })
-  },
-  */
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
   onReady: function () {
 
   },
