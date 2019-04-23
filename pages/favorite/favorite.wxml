@@ -37,7 +37,7 @@
 
 
 <view id='card-dual' class="card-dual">
-<view wx:for="{{favorites}}" wx:for-item="favorite" wx:key="favorite.id">
+<view wx:for="{{favorites}}" wx:for-item="favorite" wx:key="favorite.id" bindtap="showFav" data-favorite-id= "{{favorite.id}}">
 
 
     <view class="card-product">
@@ -70,7 +70,7 @@
             <image class="dot" src="/images/greener-dot.png"></image> 
           </view>
         </view>
-      </view>
+        </view>
     </view>
     </view>
     </view>

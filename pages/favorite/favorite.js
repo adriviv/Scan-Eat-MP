@@ -151,5 +151,15 @@ Page({
     })
   },
 
+  showFav: function (e) {
+    console.log("hello", e)
+    const data = e.currentTarget.dataset;
+    const favoriteId = data.favoriteId;
+
+    wx.navigateTo({
+      url: `../show/show?id=${favoriteId}`
+    });
+  }
+
 
 })
