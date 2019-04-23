@@ -81,5 +81,31 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  fav_bindtap: function (e) {
+    console.log('yolo', e)
+    console.log(this.data)
+    let favorite = this.data.food.id
+    let userId = wx.getStorageSync('user_id')
+  wx.request({
+    url: `http://localhost:3000/api/v1/users/${userId}/favorites`,
+    method: 'POST',
+    data: { favorite: { food_id: favorite } },
+    success: res => {
+      console.log(res)
+      wx.showToast({
+        title: 'Succeed',
+        icon: 'success',
+        duration: 3000
+      });
+       //wx.navigateTo({
+       //url: '/pages/favorite/favorite'
+       //});
+    },
+    fail: error => {
+      console.log('error: ', error)
+    }
+    })
+  },
 })

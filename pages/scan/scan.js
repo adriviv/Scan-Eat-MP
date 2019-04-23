@@ -30,6 +30,7 @@ Page({
           url: `http://localhost:3000/api/v1/users/${userId}/scans`,
           method: 'POST',
           data: food,
+
           success:(res) => {
             if (res.statusCode == 500) {
               wx.showModal({
