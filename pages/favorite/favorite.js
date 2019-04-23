@@ -126,7 +126,30 @@ Page({
 
   onShareAppMessage: function () {
 
-  }
+  },
+  
+  del_bindtap: function (e) {
+    console.log("delete", e)
+    const favoriteId = e.currentTarget.dataset.id
+    const page = this
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites/${favoriteId}`,
+      method: 'DELETE',
+      success: res => {
+        wx.showToast({
+          title: 'Succeed',
+          icon: 'success',
+          duration: 3000
+        })
+       wx.reLaunch({
+         url: '/pages/favorite/favorite',
+       })
+      },
+      fail(error) {
+        console.log(error)
+      }
+    })
+  },
 
 
 })
