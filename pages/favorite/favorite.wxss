@@ -60,62 +60,95 @@ position: relative;
 
 /* Dual card */
 
-.card-dual {
-  display:flex;
-  justify-content: space-between;
-}
+/* Top Header  */
 
+/* finish Top Header */
+/* Dual card */
+
+.card-dual {
+  display: flex;
+
+}
 .card-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
   overflow: hidden;
-  width: 300rpx;
-  height: 300rpx;
+  width: 290rpx;
+  height: 460rpx;
   background: white;
   box-shadow: 0 0 30rpx rgba(0,0,0,0.2);
   padding: 20rpx;
   margin: 20rpx;
 }
-
 .image {
-  margin: 30rpx;
+  margin: 10rpx 25rpx 25rpx 25rpx ;
   text-align: center;
 }
-
 .product-img {
-  width: 200rpx;
+  width:230rpx;
+  height:230rpx;
+}
+.h2 {
+  font-size:31rpx;
+  font-weight:bold;
+  position:relative;
+  top:-15rpx;
+}
+.p {
+font-size:27rpx;
+opacity:.7;
+margin-bottom:0;
+margin-top:15rpx;
+position:relative;
+top:-26rpx;
+}
+.classification {
+font-size:33rpx;
+opacity:.8;
+position:relative;
+bottom:9rpx;
+display: flex;
+justify-content: space-between;
+
+}
+.card-product-infos {
+}
+.dot {
+width:55rpx;
+height:55rpx;
+margin-right:10px
+}
+
+.scan-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+.face-nutrient-protein {
+  width: 15rpx;
+}
+
+.sub_card {
   height: 200rpx;
 }
+/* Finish Dual Card */
 
-.h2 {
-
-  font-size: 30rpx;
-  font-weight: bold;
-
-}
-
-.p {
-
-  font-size: 25rpx;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 15rpx;
-}
-
-.card-product-infos {
-  margin-left: 30rpx;
-}
-
-.classification {
-  
-
-  font-size: 25rpx;
-  opacity: .7;
-}
 
 .dot {
 
   width: 30rpx;
   height: 30rpx;
   margin-left: 20rpx;
+}
+
+.del_icon {
+  width: 45rpx;
+  height: 45rpx;
+  margin-top: 40rpx;
+  margin-left: 285rpx;
 }
 
 /* Finish Dual Card */
