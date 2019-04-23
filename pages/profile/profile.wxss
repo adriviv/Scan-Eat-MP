@@ -28,7 +28,7 @@
   font-size: 15px;
 }
 .divider {
-  height: 45rpx;
+  height: 65 rpx;
   padding: 10rpx 10rpx 20rpx 10rpx;
   background-color: #EA7B4C;
   color: white;

@@ -1,17 +1,16 @@
 <!--index.wxml-->
 
-<view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('/images/background-image.jpeg');">
+<view class="banner" style="background-image: linear-gradient(-225deg, rgba(250,250,250,0.8) 0%, rgba(250,250,250,0.8) 50%), url('/images/background-image.jpeg');">
 
 
 
 
   <view class="container">
-  <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+  <image  class="userinfo-avatar" src="/images/logo_final.png" mode="cover"></image>
 
     <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo"></button>
       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
       <block wx:else>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
         <button class='btn' bindtap="bindViewTap">Scan Now</button>
       </block>
   </view>

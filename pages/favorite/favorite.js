@@ -17,6 +17,11 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    wx.showToast({
+      title: 'Loading',
+      icon: 'loading',
+      duration: 1000
+    })
     const page = this
     wx.request({
       url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites`,
