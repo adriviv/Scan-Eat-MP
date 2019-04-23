@@ -33,7 +33,7 @@
           </view>      </view>
     </view>
   </view>
-  <view class="star">
+  <view bindtap="fav_bindtap"class="star">
     <image class="star1" src="/images/favorite_footer_orange.png"></image>
   </view>
 </view>

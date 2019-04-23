@@ -28,6 +28,22 @@ Page({
   onLoad: function (options) {
     const page = this
     wx.request({
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites`,
+      method: 'GET',
+      success(res) {
+
+        console.log('data informations',res)
+        page.setData({ 'favorites' :res.data})
+      },
+    });
+
+
+
+
+
+
+
+    wx.request({
       url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans/statisitics`,
       success: res => {
         console.log('percentage', res)
