@@ -1,3 +1,4 @@
+<wxs src="./profile.wxs" module="tools" />
 <!-- Top Header starts -->
 
 <view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('/images/background-image.jpeg');">
@@ -26,39 +27,35 @@
 
 <view class="scan-container">
   <view wx:for="{{scans}}" wx:for-item="scan" wx:key="scan.id" bindtap="showScan"  data-scan-id="{{scan.id}}">
-
-
     <view class="card-product">
       <view class="image">
-        <image src="{{scan.food.image_url}}" class="product-img"></image> 
+        <image src="{{scan.food.image_url}}" class="product-img" mode="aspectFill"></image> 
       </view>
       <view class="sub_card">
         <view class="info-n-smiley card-product-infos">
-          <view class="h2">{{scan.food.product_name}}</view>
-          <view class="p">{{scan.food.brand}}</view>
+          <view class="h2">{{tools.limitLength(scan.food.product_name, 30)}}</view>
+          <view class="p">{{tools.limitLength(scan.food.brand, 24)}}</view>
         </view>
-        <view class="classification">
-          <view class="classification-text">{{scan.food.nutrition_grade}}</view>
-          <view wx:if="{{scan.food.nutrition_grade == 'Very Bad'}}">
-            <image class="dot" src="/images/red_dot.png"></image> 
-          </view>
-           <view wx:if="{{scan.food.nutrition_grade == 'Bad'}}">
-            <image class="dot" src="/images/orange-dot.png"></image> 
-          </view>
-           <view wx:if="{{scan.food.nutrition_grade == 'Medium'}}">
-            <image class="dot" src="/images/yellow-dot.png"></image> 
-          </view>
-           <view wx:if="{{scan.food.nutrition_grade == 'Good'}}">
-            <image class="dot" src="/images/green-dot.png"></image> 
-          </view>
-           <view wx:if="{{scan.food.nutrition_grade == 'Very Good'}}">
-            <image class="dot" src="/images/greener-dot.png"></image> 
-          </view>
+      </view>
+      <view class="classification">
+        <view class="classification-text">{{scan.food.nutrition_grade}}</view>
+        <view wx:if="{{scan.food.nutrition_grade == 'Very Bad'}}">
+          <image class="dot" src="/images/red_dot.png"></image> 
+        </view>
+          <view wx:if="{{scan.food.nutrition_grade == 'Bad'}}">
+          <image class="dot" src="/images/orange-dot.png"></image> 
+        </view>
+          <view wx:if="{{scan.food.nutrition_grade == 'Medium'}}">
+          <image class="dot" src="/images/yellow-dot.png"></image> 
+        </view>
+          <view wx:if="{{scan.food.nutrition_grade == 'Good'}}">
+          <image class="dot" src="/images/green-dot.png"></image> 
+        </view>
+          <view wx:if="{{scan.food.nutrition_grade == 'Very Good'}}">
+          <image class="dot" src="/images/greener-dot.png"></image> 
         </view>
       </view>
     </view>
-
-
   </view>
 </view>
 

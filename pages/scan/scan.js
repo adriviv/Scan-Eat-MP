@@ -31,6 +31,8 @@ Page({
           method: 'POST',
           data: food,
 
+
+
           success:(res) => {
             if (res.statusCode == 500) {
               wx.showModal({
