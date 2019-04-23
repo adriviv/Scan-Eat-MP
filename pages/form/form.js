@@ -33,7 +33,7 @@ Page({
     }
 
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${page.data.userId}/foods`,
+      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/foods`,
       method: 'POST',
      
       data: { food: food },
