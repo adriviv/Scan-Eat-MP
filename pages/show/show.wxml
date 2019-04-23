@@ -33,7 +33,7 @@
           </view>      </view>
     </view>
   </view>
-  <view class="star">
+  <view bindtap="fav_bindtap"class="star">
     <image class="star1" src="/images/favorite_footer_orange.png"></image>
   </view>
 </view>
@@ -41,13 +41,12 @@
 <!-- Product finish-->
 
 
-<view class="allergens">
+<view bindtap='active_allergens' class="allergens">
   <view class="allergens-header">
     <view class="h3">Allergens</view>
     <image bindtap="list" class="dropdown" src="/images/dropdown-down.png"></image>
   </view>
-    <view class="allergens-subdiv">
-    <image class="icons" src="/images/warning.png"></image>
+    <view class="allergens-subdiv"wx:if="{{active_allergens == '2'}}">
     <view class="h5">{{food.allergens}}</view>
     </view>
 </view>

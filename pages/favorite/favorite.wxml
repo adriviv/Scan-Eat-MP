@@ -20,7 +20,7 @@
 </view>
 
 
-  <view class="header">Favorites</view>
+  
 
 
 
@@ -33,10 +33,30 @@
 -->
 
 <!-- card dual -->  
+<view id='hello' bindtap='hello' class="header">Favorites</view>
 
-<view class="card-dual">
+
+<view id='card-dual' class="card-dual">
+<view wx:for="{{favorites}}" wx:for-item="favorite" wx:key="favorite.id">
+
+
   <view class="card-product">
-   <progress percent="{{very_good_nutrition_percentage}}" stroke-width="10"  color="#4fff54" active show-info/>
+    <view class="image">
+      <image src="{{favorite.image_url}}" class="product-img"></image> 
+    </view>
+    <view class="info-n-smiley">
+      <view class="card-product-infos">
+        <view class="h2">{{favorite.product_name}}</view>
+        <view class="p">{{favorite.brand}}</view>
+        <view class="classification">{{favorite.nutrition_grade}}
+          <image class="dot" src="/images/green-dot.png"></image> 
+          </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </view>
+  <!-- <view class="card-product">
     <view class="image">
       <image src="https://picsum.photos/200/300" class="product-img"></image> 
     </view>
@@ -50,22 +70,7 @@
       </view>
     </view>
   </view>
-  <view class="card-product">
-    <view class="image">
-      <image src="https://picsum.photos/200/300" class="product-img"></image> 
-    </view>
-    <view class="info-n-smiley">
-      <view class="card-product-infos">
-        <view class="h2">Product Name</view>
-        <view class="p">Brand</view>
-        <view class="classification">Medium
-          <image class="dot" src="/images/green-dot.png"></image> 
-        </view>
-      </view>
-    </view>
-  </view>
-</view>
-
+ -->
 
 
 

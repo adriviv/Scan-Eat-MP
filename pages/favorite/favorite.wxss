@@ -62,12 +62,13 @@ position: relative;
 
 .card-dual {
   display:flex;
+  justify-content: space-between;
 }
 
 .card-product {
   overflow: hidden;
-  width: 400rpx;
-  height: 430rpx;
+  width: 300rpx;
+  height: 300rpx;
   background: white;
   box-shadow: 0 0 30rpx rgba(0,0,0,0.2);
   padding: 20rpx;
