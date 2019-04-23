@@ -9,7 +9,6 @@ Page({
     hasUserInfo: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     userId: wx.getStorageSync('user_id'),
-    active: 1,  
   },
 
 
@@ -28,50 +27,13 @@ Page({
         page.setData({ 'favorites' :res.data})
       },
     });
-
-
-
-
-
-
-
-    wx.request({
-      url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans/statisitics`,
-      success: res => {
-        console.log('percentage', res)
-
-        page.setData(res.data)
-
-        //wx.setNavigationBarTitle({
-        // title: page.data.name,   
-      }
-    }) 
-    wx.getUserInfo({
-      success: res => {
-        app.globalData.userInfo = res.userInfo
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    })
   },
 
 
   
 
   onReady: function () {
-    var that = this;
-    that.canvasRing = that.selectComponent("#canvasVeryBad");
-    that.canvasRing.showCanvasRing();
-    that.canvasRing = that.selectComponent("#canvasBad");
-    that.canvasRing.showCanvasRing();
-    that.canvasRing = that.selectComponent("#canvasMedium");
-    that.canvasRing.showCanvasRing();
-    that.canvasRing = that.selectComponent("#canvasGood");
-    that.canvasRing.showCanvasRing();
-    that.canvasRing = that.selectComponent("#canvasVeryGood");
-    that.canvasRing.showCanvasRing();
+ 
   },
 
 

@@ -1,0 +1,20 @@
+.canvasDivider {
+  display: flex;
+  justify-content: space-around;
+}
+.canvasDivider2 {
+  display: flex;
+
+}
+
+.canvaBad{
+  position: relative;
+  left: 130rpx;
+  bottom: 45rpx;
+}
+
+.canvaVeryBad{
+  position: relative;
+  left: 145rpx;
+  bottom: 45rpx;
+}

@@ -1,0 +1,23 @@
+<view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('/images/background-image.jpeg');">
+    <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <view class="userinfo">
+      <view class="welcome">Welcome</view>
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+  </view>
+
+<view class='canvasDivider'>
+  <canvas-ring id="canvasVeryGood" lineColor='green' title="" valueColor="green" value="{{very_good_nutrition_percentage}}" active></canvas-ring>
+  <canvas-ring id="canvasGood" lineColor='#4fff54' title="" valueColor="#4fff54" value="{{good_nutrition_percentage}}" active></canvas-ring>
+  <canvas-ring id="canvasMedium" lineColor='yellow' title="" valueColor="yellow" value="{{medium_nutrition_percentage}}" active></canvas-ring>
+</view>
+<view class='canvasDivider2'>
+  <canvas-ring class='canvaBad'id="canvasBad" lineColor='orange' title="" valueColor="orange" value="{{bad_nutrition_percentage}}" active></canvas-ring>
+  <canvas-ring class='canvaVeryBad'id="canvasVeryBad" lineColor='red' title="" valueColor="red" value="{{very_bad_nutrition_percentage}}" active></canvas-ring>
+</view>
+
+
+  
