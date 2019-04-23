@@ -5,36 +5,50 @@ Page({
    * Page initial data
    */
   data: {
-    userId: wx.getStorageSync('user_id')
+    userId: wx.getStorageSync('user_id'),
 
   },
+
+
+
 
   /**
+
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
-
-  },
-
   bindSubmit: function (e) {
+    console.log('eeeee', e.detail)
+    let page = this
+          //Add barcode:  That is the tuff question
+
     let food = {
-      // name: e.detail.value.name,
-      // description: e.detail.value.description,
-      // location: e.detail.value.location,
-      // category: e.detail.value.category,
+      product_name: e.detail.value.name,
+      brand: e.detail.value.brand,
+      calories_quantity: e.detail.value.calories_slider,
+      sugar_quantity: e.detail.value.sugar_slider,
+      salt_quantity: e.detail.value.salt_slider,
+      saturated_fat_quantity: e.detail.value.saturated_fat_slider,
+      protein_quantity: e.detail.value.protein_slider,
+      sugar_quantity: e.detail.value.sugar_slider,
     }
 
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${userId}/foods`,
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/foods`,
       method: 'POST',
      
       data: { food: food },
       success: res => {
-        
-          wx.reLaunch({
-            url: '/pages/profile/profile'
-          });
-         
+
+        wx.showToast({
+          title: 'Added to Checking',
+          icon: 'success',
+          duration: 3000
+        });
+      setTimeout(function (e) {
+        wx.reLaunch({
+          url: '/pages/profile/profile'
+        });
+        }, 2000);
       }
     })
   },

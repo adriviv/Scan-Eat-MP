@@ -1,12 +1,65 @@
-<form bindsubmit="bindSubmit">
-      <textarea value="{{name}}" placeholder="name" class="box" name="name" maxlength="-1" auto-height />
-      <textarea value="{{description}}" style="input-size"placeholder="description" class="box" name="description" maxlength="-1" auto-height />
-      <textarea value="{{location}}" style="input-size"placeholder="location" class="box" name="location" maxlength="-1" auto-height />
-      <textarea value="{{category}}" style="input-size"placeholder="category" class="box" name="category" maxlength="-1" auto-height />
-      <textarea value="{{rewards}}" style="input-size"placeholder="rewards" class="box" name="rewards" maxlength="-1" auto-height />
-      <textarea value="{{amount_objective}}" style="input-size"placeholder="amount_objective" class="box"  name="amount_objective" maxlength="-1" auto-height />
-      <textarea value="{{video}}" style="input-size"placeholder="video" class="box" name="video" maxlength="-1" auto-height />
-      <textarea value="{{image}}" style="input-size"placeholder="image" class="box" name="image" maxlength="-1" auto-height />
-      <button class="submit-btn" style="margin-bottom:50px "type="primary" form-type="submit" loading="{{loading}}">Submit
-      </button>
-    </form>
+  <view class="header">
+    <view class="h2-header">Submit A Product</view>
+  </view>
+
+  <view class="contain">
+    <view class="wrap">
+      <form bindsubmit="bindSubmit">
+
+        <view class="section section_gap">
+          <view class="section__title">Category</view>
+          <radio-group name="radio-group">
+            <label><radio value="food"/>Food</label>
+            <label><radio value="beverage"/>Beverage</label>
+            <label><radio value="other"/>Other</label>
+          </radio-group>
+        </view>
+
+        <view class="user-input">
+          <view class="text-area-wrap">
+          <textarea value="{{name}}" style="input-size" placeholder="Product Name" class="input-height" name="name" maxlength="-1" auto-height />
+          </view>
+        </view>
+
+        <view class="user-input">
+          <view class="text-area-wrap">
+          <textarea value="{{brand}}" style="input-size"placeholder="Brand" class="input-height" name="brand" maxlength="-1" auto-height />
+          </view>
+        </view>
+
+        <view class="section section_gap">
+          <view class="section__title">Calories</view>
+          <slider name="calories_slider" show-value step="1" min="0" max="1200" ></slider>
+        </view>
+        <view class="section section_gap">
+           <view class="section__title">Sugar</view>
+          <slider name="sugar_slider" show-value step="0.1" min="0" max="100" ></slider>
+        </view>
+        <view class="section section_gap">
+          <view class="section__title">Saturated Fat</view>
+          <slider name="saturated_fat_slider" show-value step="0.1" min="0" max="25" ></slider> 
+        </view>
+        <view class="section section_gap">
+          <view class="section__title">Fiber</view>
+          <slider name="fiber_slider" show-value step="0.1" min="0" max="10" ></slider>
+        </view>
+       <view class="section section_gap">
+          <view class="section__title">salt</view>
+          <slider name="salt_slider" show-value step="0.1" min="0" max="25" ></slider>
+        </view>
+        <view class="section section_gap">
+          <view class="section__title">Protein</view>
+          <slider name="protein_slider" show-value step="0.1" min="0" max="25" ></slider>
+        </view>
+
+        <view class="user-input">
+          <view class="text-area-wrap">
+          <textarea value="{{ingredients}}" style="input-size"placeholder="Ingredients" class="input-height" name="ingredients" maxlength="-1" auto-height />
+          </view>
+        </view>
+
+        <button  style="margin-bottom:50px "type="primary" form-type="submit" loading="{{loading}}">Submit</button>
+      </form>
+    </view>
+  </view>
+
