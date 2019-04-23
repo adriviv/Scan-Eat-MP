@@ -5,7 +5,15 @@ Page({
    * Page initial data
    */
   data: {
-    userId: wx.getStorageSync('user_id'),
+    userId: wx.getStorageSync('user_id'), 
+    active_allergens: 1,
+  },
+
+  active_allergens: function (e) {
+    var a = e.currentTarget.dataset
+    this.setData({
+      active_allergens: 2
+    })
   },
 
   /**

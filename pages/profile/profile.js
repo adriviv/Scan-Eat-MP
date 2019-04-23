@@ -84,7 +84,11 @@ Page({
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
-    console.log('onPullDownRefresh')
+    wx.showToast({
+      title: 'Loading',
+      icon: 'loading',
+      duration: 2000
+    })
 
     // wx.reLaunch({
     //  url: '../profile/profile',

@@ -5,7 +5,8 @@
     "pages/favorite/favorite",
     "pages/scan/scan",
     "pages/profile/profile",
-    "pages/show/show"
+    "pages/show/show",
+    "pages/form/form"
   ],
   "window": {
     "backgroundTextStyle": "light",
