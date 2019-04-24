@@ -5,7 +5,7 @@
   <button class="submit-btn" style="margin-bottom:50px "type="primary" form-type="submit" loading="{{loading}}">Submit</button>
 </form>
 -->
-<!--
+
 <view class="btn-area">
  <button bindtap="bindScan">Scan</button>
 </view>
