@@ -7,7 +7,8 @@
     "pages/profile/profile",
     "pages/show/show",
     "pages/form/form", 
-    "pages/dashboard/dashboard"
+    "pages/dashboard/dashboard",
+    "pages/informations/informations"
   ],
   "window": {
     "backgroundTextStyle": "light",

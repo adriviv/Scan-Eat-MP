@@ -22,6 +22,11 @@ Page({
           wx.scanCode({
       /** onlyFromCamera: true, */
       success: (res) => {
+        wx.showToast({
+          title: 'Loading',
+          icon: 'loading',
+          duration: 3000
+        });
         that.setData({ scan: false }) 
 
         console.log("super1", res)

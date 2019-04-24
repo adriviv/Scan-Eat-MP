@@ -10,7 +10,7 @@ top: 70rpx;
   height: 400rpx;
   width: 400rpx;
   position: relative;
-  top: 245rpx;
-  left: 163rpx;
+  top: 138rpx;
+  left: 186rpx;
 
 }

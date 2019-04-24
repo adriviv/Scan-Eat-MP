@@ -13,7 +13,7 @@ Page({
   active_allergens: function (e) {
     var a = e.currentTarget.dataset
     this.setData({
-      active_allergens: 2
+      active_allergens: this.data.active_allergens == 1 ? 2 : 1 
     }) 
   },
 
@@ -21,6 +21,11 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    wx.showToast({
+      title: 'Loading',
+      icon: 'loading',
+      duration: 2000
+    });
     
     console.log('yihouuuuuuu', options)
     const page = this
@@ -65,7 +70,12 @@ Page({
    */
   onReady: function () {
   },
-
+  
+  notationMethod: function () {
+    wx.navigateTo({
+      url: 'pages/informations/informations',
+    })
+  },
   /**
    * Lifecycle function--Called when page show
    */

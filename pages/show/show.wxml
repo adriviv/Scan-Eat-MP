@@ -490,6 +490,10 @@
     <view class="h4">{{food.ingredients}}</view>
 </view>
 
+<button bindtap='notationMethod' class='btn-informations'>Notation Method</button>
+
+
+
 
 
 
