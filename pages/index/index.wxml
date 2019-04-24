@@ -1,6 +1,7 @@
 <!--index.wxml-->
 
-<view class="banner" style="background-image: linear-gradient(-225deg, rgba(250,250,250,0.8) 0%, rgba(250,250,250,0.8) 50%), url('/images/background-image.jpeg');">
+<view class="banner">
+<image class='image' src="/images/background-image.jpeg" mode="aspectFill"></image>
 
 
 
@@ -9,9 +10,7 @@
   <image  class="userinfo-avatar" src="/images/logo_final.png" mode="cover"></image>
 
     <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo"></button>
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <block wx:else>
-        <button class='btn' bindtap="bindViewTap">Scan Now</button>
-      </block>
+      <button wx:if="{{!hasUserInfo && canIUse}}" bindtap="bindViewTap" class='btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> Scan Now </button>
+
   </view>
 </view>

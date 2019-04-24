@@ -1,1 +1,29 @@
-/* pages/informations/informations.wxss */
+/* pages/mpoverview/mpovervie.wxss */
+.header1 {
+  background-color: #EA7B4C;
+}
+.h2-header {  
+  color: white;
+  font-size: 50rpx; 
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+.contain {
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+.h2 {
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.h3 {
+  margin-bottom: 20rpx;
+}
+.image {
+  text-align: center;
+}
+.opf {
+  height: 200rpx;
+  width: 237rpx;
+}

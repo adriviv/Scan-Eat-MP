@@ -7,10 +7,28 @@ top: 70rpx;
 }
 
 .btn-area2{
-  height: 400rpx;
-  width: 400rpx;
-  position: relative;
-  top: 138rpx;
-  left: 186rpx;
+height:250rpx;
+width:250rpx;
+position:relative;
+top:193rpx;
+left:244rpx;
+background-color:white;
+border-radius:50%;
+font-size:62rpx;
+font-weight:bold;
+color:#ea7b4c;
+border-style: solid;
+border-width: 5px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+text-align: center;
+}
+.image{
+position: absolute;
+z-index:-1;
+width:100vw;
+height:100vh;
+left:0;
 
 }

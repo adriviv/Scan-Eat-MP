@@ -75,7 +75,7 @@ Page({
   
   notationMethod: function () {
     wx.navigateTo({
-      url: 'pages/informations/informations',
+      url: '/pages/informations/informations',
     })
   },
   /**
@@ -126,7 +126,6 @@ Page({
     const favoriteId = e.currentTarget.dataset.id
     const page = this
     wx.request({
-
       url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites/${favoriteId}`,
 
       method: 'DELETE',
