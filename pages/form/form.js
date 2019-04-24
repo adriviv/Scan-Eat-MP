@@ -48,11 +48,11 @@ console.log('nihao', res)
           icon: 'success',
           duration: 3000
         });
-      /** setTimeout(function (e) {
+      setTimeout(function (e) {
         wx.reLaunch({
           url: '/pages/profile/profile'
         });
-        }, 2000);*/
+        }, 2000);
       }
     })
   },
