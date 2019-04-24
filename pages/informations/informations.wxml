@@ -1,2 +1,37 @@
-<!--pages/informations/informations.wxml-->
-<text>pages/informations/informations.wxml</text>
+<view class="header1">
+    <view class="h2-header">Notation Method</view>
+</view>
+
+<view class="contain">
+  <view class="h2">What is Nutri-Score?</view>
+  <view class="h3">As part of the Health Act of 2016, the French government recommended the establishment of a nutritional information clear, visible, and easy to understand for all. The goal is to improve the nutritional information on products and help consumers buy foods of higher nutritional quality.
+  </view>
+  <view class="h2">How is the score of a product calculated?</view>
+  <view class="h3">To classify each product, international research teams have developed a score that takes into account, for 100 grams of product, the content:
+  </view>
+  <view class="h3">
+- nutrients and foods to promote: fiber, protein, fruits and vegetables
+  </view>
+
+  <view class="h3">
+  - nutrients to limit: energy, saturated fatty acids, sugars, salt.
+  </view>
+  <view class="h3">
+  After calculation, the score obtained by a product allows to assign a letter and a color.
+  To take into account the specificities of certain food families such as added fat (butter, oil), cheese or beverages, the method of calculating the score has been adapted.
+  </view>
+
+  <view class="h2">
+  - Which products are affected by the logo?
+  </view>
+  <view class="h3">
+  With a few exceptions (herbs, teas, coffees, yeasts, etc.), all processed products and beverages are affected by Nutri-Score. Unprocessed products such as fresh fruits and vegetables or fresh fish are not affected, as are alcoholic beverages.
+  </view>
+  <view class="h3">
+  The information about proffes are under the authorship of Open Food Facts (https://openfoodfacts.org).
+  Open Food Facts is made by a non-profit association, independent from the industry. It is made for all, by all, and it is funded by all.
+  </view>
+</view>
+<view class="image">
+  <image class="opf" src="/images/openfoodfacts.png" url="https://world.openfoodfacts.org/"></image>
+</view>

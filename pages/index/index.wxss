@@ -28,13 +28,21 @@
 
 .btn {
 position:fixed;
-top:1000rpx;
+top:710rpx;
 color:#EA7B4C;
 border:4px solid #EA7B4C;
-border-radius:49px;
+border-radius:50px;
 font-family:bold;
-font-size:25px;
+font-size:38rpx;
 font-weight:bold;
 background-color:white;
 }
 
+.image{
+position: absolute;
+z-index:-1;
+width:100vw;
+height:100vh;
+left:0;
+
+}

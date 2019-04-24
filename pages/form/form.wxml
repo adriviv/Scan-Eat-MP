@@ -19,7 +19,7 @@
 
       <view class="user-input">
         <view class="text-area-wrap">
-        <textarea value="{{barcode}}" style="input-size" placeholder="Barcode" class="input-height" name="barcode" maxlength="-1" auto-height />
+        <input value="{{barcode}}" type="digit" placeholder="Barcode" class="input-height" name="barcode" maxlength="-1" auto-height />
         </view>
       </view>
       <view class="user-input">

@@ -1,3 +1,5 @@
+<view class="banner">
+<image class='image' src="/images/knife.jpg"mode="aspectFill" ></image>
 
 <!--
 <form bindsubmit="bindSubmit">
@@ -8,5 +10,5 @@
 
 <image class='images' src='/images/logo_final.png'></image>
 
-<image  class="btn-area2" bindtap="bindScan"  src='/images/scan-btn.png'></image>
-
+<view class='btn-area2'  bindtap="bindScan" >Scan</view>
+</view>

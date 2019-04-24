@@ -25,7 +25,7 @@ Page({
         wx.showToast({
           title: 'Loading',
           icon: 'loading',
-          duration: 3000
+          duration: 4000
         });
         that.setData({ scan: false }) 
 
@@ -51,9 +51,8 @@ Page({
                 success: function (res) {
                    if (res.confirm) {
                     
-                    wx.reLaunch({
+                    wx.navigateTo({
                       url: '../form/form',
-
                     })
                   } else if (res.cancel) {
                 
@@ -65,7 +64,7 @@ Page({
               wx.showToast({
                 title: 'Succeed',
                 icon: 'success',
-                duration: 3000
+                duration: 4000
               });
               setTimeout(function (e) {
                 wx.request({
