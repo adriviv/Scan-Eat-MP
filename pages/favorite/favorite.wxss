@@ -67,7 +67,7 @@ position: relative;
 
 .card-dual {
   display: flex;
-
+  flex-wrap: wrap;
 }
 .card-product {
   display: flex;

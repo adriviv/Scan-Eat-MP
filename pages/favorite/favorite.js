@@ -23,16 +23,6 @@ Page({
       icon: 'loading',
       duration: 1000
     })
-    const page = this
-    wx.request({
-      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites`,
-      method: 'GET',
-      success(res) {
-
-        console.log('data informations',res)
-        page.setData({ 'favorites' :res.data})
-      },
-    });
   },
 
 
@@ -47,11 +37,21 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    if (this.data.favorites == true) {
-      wx.reLaunch({
-        url: '/pages/favorite/favorite',
-      })
-    }
+    // if (this.data.favorites == true) {
+      // wx.reLaunch({
+      //   url: '/pages/favorite/favorite',
+      // })
+    // }
+    const page = this
+    wx.request({
+      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites`,
+      method: 'GET',
+      success(res) {
+
+        console.log('data informations', res)
+        page.setData({ 'favorites': res.data })
+      },
+    });
   },
 
   /**
@@ -127,7 +127,7 @@ Page({
     console.log("hello", e)
     const data = e.currentTarget.dataset;
     const favoriteId = data.favoriteId;
-
+    console.log("Go to id: ", favoriteId)
     wx.navigateTo({
       url: `../show/show?id=${favoriteId}&favorited=true`
     });

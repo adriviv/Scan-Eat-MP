@@ -37,14 +37,14 @@ Page({
     method: 'GET',
     success(res) {
 
-      console.log('data informations', res)
+      // console.log('data informations', res)
       page.setData({ 'favorites': res.data })
 
       const added = res.data.find(function(item){
         return item.food_id == options.id
       })
 
-      console.log(added)
+      // console.log(added)
 
       if (added) {
         page.setData({
@@ -57,10 +57,12 @@ Page({
 
   }})
 
+    console.log(`https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/scans/${options.id}`)
+
     wx.request({
       url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/scans/${options.id}`,
       success: res => {
-        console.log('please', res)
+        console.log('Food data', res.data)
         page.setData(res.data)
         //wx.setNavigationBarTitle({
         // title: page.data.name,
