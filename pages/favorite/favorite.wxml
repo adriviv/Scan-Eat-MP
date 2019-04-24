@@ -24,7 +24,9 @@
 -->
 
 <!-- card dual -->  
-<view id='hello' bindtap='hello' class="header">Favorites</view>
+<view class="header1">
+    <view class="h2-header">Favorites</view>
+  </view>
 
 
 <view id='card-dual' class="card-dual">

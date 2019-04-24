@@ -1,10 +1,9 @@
 <wxs src="./profile.wxs" module="tools" />
 <!-- Top Header starts -->
 
-<view class="divider">
-  <view class="header">History
+<view class="header1">
+    <view class="h2-header">History</view>
   </view>
-</view>
 
 <!-- Top Header finish -->
 

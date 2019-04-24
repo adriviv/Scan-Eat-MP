@@ -1,4 +1,15 @@
 /* Top Header  */
+.header1 {
+  background-color: #EA7B4C;
+}
+
+.h2-header {  
+  color: white;
+  font-size: 50rpx; 
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
 .banner {
   color: white;
   text-align: center;

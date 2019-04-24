@@ -2,7 +2,7 @@
 
 <view class="product-header">
   <view class="image">
-    <image class="product-img" src="{{food.image_url}}" ></image>
+    <image class="product-img" src="{{food.image_url}}" mode="aspectFill"></image>
   </view>
   <view class="product-info">
     <view class="h2">{{food.product_name}}</view>
