@@ -157,7 +157,7 @@ Page({
     const favoriteId = data.favoriteId;
 
     wx.navigateTo({
-      url: `../show/show?id=${favoriteId}`
+      url: `../show/show?id=${favoriteId}&favorited=true`
     });
   }
 

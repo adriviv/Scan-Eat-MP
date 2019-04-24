@@ -33,7 +33,10 @@
           </view>      </view>
     </view>
   </view>
-  <view bindtap="fav_bindtap"class="star">
+  <view wx:if="{{fav_bindtap == '1'}}" bindtap="fav_bindtap"class="star">
+    <image class="star1" src="/images/favorite_footer.png"></image>
+  </view>
+  <view wx:if="{{fav_bindtap == '2'}}" bindtap="del_bindtap"class="star" data-id="{{favorite_id}}">
     <image class="star1" src="/images/favorite_footer_orange.png"></image>
   </view>
 </view>

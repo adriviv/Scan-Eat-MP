@@ -7,13 +7,14 @@ Page({
   data: {
     userId: wx.getStorageSync('user_id'), 
     active_allergens: 1,
+    fav_bindtap: 1,
   },
 
   active_allergens: function (e) {
     var a = e.currentTarget.dataset
     this.setData({
       active_allergens: 2
-    })
+    }) 
   },
 
   /**
@@ -82,8 +83,22 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  del_bindtap: function (e) {
+    console.log("delete", e)
+    const favoriteId = e.currentTarget.dataset.id
+    const page = this
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites/${favoriteId}`,
+      method: 'DELETE',
+      success: res => {
+        this.setData({
+          fav_bindtap: 1,
+        })
+      }
+    })
+  },
   fav_bindtap: function (e) {
+    const page = this
     console.log('yolo', e)
     console.log(this.data)
     let favorite = this.data.food.id
@@ -94,14 +109,17 @@ Page({
     data: { favorite: { food_id: favorite } },
     success: res => {
       console.log(res)
-      wx.showToast({
-        title: 'Succeed',
-        icon: 'success',
-        duration: 3000
-      });
-       //wx.navigateTo({
-       //url: '/pages/favorite/favorite'
-       //});
+      const fav_bindtap = this.data.fav_bindtap
+      console.log('Binding', fav_bindtap)
+      this.setData({
+        fav_bindtap: fav_bindtap==2 ? 1 : 2,
+        favorite_id: res.data
+      })
+      const del_bindtap = this.data.del_bindtap
+      console.log('Binding', fav_bindtap)
+
+
+
     },
     fail: error => {
       console.log('error: ', error)

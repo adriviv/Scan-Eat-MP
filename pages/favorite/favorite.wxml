@@ -39,11 +39,10 @@
 <view id='card-dual' class="card-dual">
 <view wx:for="{{favorites}}" wx:for-item="favorite" wx:key="favorite.id" bindtap="showFav" data-favorite-id= "{{favorite.id}}">
 
-
-    <view class="card-product">
-    <view class="delete">
+   <!-- <view class="delete">
         <image src="/images/recycling_bin.png" class="del_icon" bindtap="del_bindtap" data-id="{{favorite.favorite_id}}"></image>
-        </view>
+        </view> -->
+    <view class="card-product">
       <view class="image">
         <image src="{{favorite.image_url}}" class="product-img"></image> 
       </view>
