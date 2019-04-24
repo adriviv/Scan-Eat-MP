@@ -24,7 +24,7 @@ Page({
     })
     const page = this
     wx.request({
-      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites`,
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites`,
       method: 'GET',
       success(res) {
 
