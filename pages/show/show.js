@@ -26,7 +26,9 @@ Page({
     const page = this
 
   wx.request({
+
     url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites`,
+
     method: 'GET',
     success(res) {
 
@@ -114,7 +116,9 @@ Page({
     const favoriteId = e.currentTarget.dataset.id
     const page = this
     wx.request({
+
       url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites/${favoriteId}`,
+
       method: 'DELETE',
       success: res => {
         this.setData({
