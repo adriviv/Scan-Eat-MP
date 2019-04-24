@@ -6,6 +6,7 @@
 </form>
 -->
 
-<view class="btn-area">
- <button bindtap="bindScan">Scan</button>
-</view>
+<image class='images' src='/images/logo_final.png'></image>
+
+<image  class="btn-area2" bindtap="bindScan"  src='/images/scan-btn.png'></image>
+

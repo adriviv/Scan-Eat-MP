@@ -15,6 +15,10 @@
     </view>
   </view>
 
+   <view class="header1">
+    <view class="h2-header">Nutrition Overview</view>
+  </view>
+
 
 <view class='canvasDivider'>
   <canvas-ring id="canvasVeryGood" lineColor='green' title="" valueColor="green" value="{{very_good_nutrition_percentage}}" active></canvas-ring>

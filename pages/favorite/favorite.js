@@ -9,6 +9,7 @@ Page({
     hasUserInfo: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     userId: wx.getStorageSync('user_id'),
+    favorites: false,
   },
 
 
@@ -46,7 +47,11 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    if (this.data.favorites == true) {
+      wx.reLaunch({
+        url: '/pages/favorite/favorite',
+      })
+    }
   },
 
   /**

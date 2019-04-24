@@ -1,1 +1,16 @@
-/* pages/scan/scan.wxss */
+.images {
+height: 550rpx;
+width: 501rpx;
+position: relative;
+left: 124rpx;
+top: 70rpx;
+}
+
+.btn-area2{
+  height: 400rpx;
+  width: 400rpx;
+  position: relative;
+  top: 138rpx;
+  left: 186rpx;
+
+}

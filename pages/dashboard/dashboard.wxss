@@ -30,6 +30,7 @@ margin-bottom: -45rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5rpx;
 }
 .userinfo-avatar {
   width: 128rpx;
@@ -128,6 +129,18 @@ position: relative;
   color: grey;
   justify-content: space-between;
   padding: 0 180rpx 0 220rpx;
-  margin-bottom: 40rpx;
+
 }
 
+.header1 {
+  background-color: #EA7B4C;
+}
+
+.h2-header {  
+  color: white;
+  font-size: 50rpx; 
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  margin-top: 3rpx,
+}

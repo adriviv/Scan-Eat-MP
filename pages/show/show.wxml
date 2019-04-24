@@ -220,7 +220,7 @@
           <view wx:if="{{food.sugar_percentage >= '50' && food.sugar_percentage < '75'}}">
             <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="orange" active />
           </view>
-          <view wx:if="{{food.sugar_percentage > '75'}}">
+          <view wx:if="{{food.sugar_percentage >= '75'}}">
             <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="red" active />
           </view>
         </view> 
@@ -259,7 +259,7 @@
           <view wx:if="{{food.saturated_fat_percentage >= '50' && food.saturated_fat_percentage < '75'}}">
             <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="orange" active />
           </view>
-          <view wx:if="{{food.saturated_fat_percentage > '75'}}">
+          <view wx:if="{{food.saturated_fat_percentage >= '75'}}">
             <progress percent="{{food.saturated_fat_percentage}}" stroke-width="10"  color="red" active />
           </view>
         </view> 
@@ -298,7 +298,7 @@
           <view wx:if="{{food.salt_percentage >= '50' && food.salt_percentage < '75'}}">
             <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="orange" active />
           </view>
-          <view wx:if="{{food.salt_percentage > '75'}}">
+          <view wx:if="{{food.salt_percentage >= '75'}}">
             <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="red" active />
           </view>
         </view> 
@@ -399,7 +399,7 @@
           <view wx:if="{{food.sugar_percentage >= '50' && food.sugar_percentage < '75'}}">
             <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="orange" active />
           </view>
-          <view wx:if="{{food.sugar_percentage > '75'}}">
+          <view wx:if="{{food.sugar_percentage >= '75'}}">
             <progress percent="{{food.sugar_percentage}}" stroke-width="10"  color="red" active />
           </view>
         </view> 
@@ -477,7 +477,7 @@
           <view wx:if="{{food.salt_percentage >= '50' && food.salt_percentage < '75'}}">
             <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="orange" active />
           </view>
-          <view wx:if="{{food.salt_percentage > '75'}}">
+          <view wx:if="{{food.salt_percentage >= '75'}}">
             <progress percent="{{food.salt_percentage}}" stroke-width="10"  color="red" active />
           </view>
         </view> 
@@ -489,6 +489,10 @@
     <view class="h3">Ingredients</view>
     <view class="h4">{{food.ingredients}}</view>
 </view>
+
+<button bindtap='notationMethod' class='btn-informations'>Notation Method</button>
+
+
 
 
 
