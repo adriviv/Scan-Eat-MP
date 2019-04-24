@@ -25,6 +25,31 @@ Page({
     console.log('yihouuuuuuu', options)
     const page = this
 
+  wx.request({
+    url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites`,
+    method: 'GET',
+    success(res) {
+
+      console.log('data informations', res)
+      page.setData({ 'favorites': res.data })
+
+      const added = res.data.find(function(item){
+        return item.food_id == options.id
+      })
+
+      console.log(added)
+
+      if (added) {
+        page.setData({
+          fav_bindtap: 2,
+          favorite_id: added.favorite_id
+        })
+      }
+
+     
+
+  }})
+
     wx.request({
       url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans/${options.id}`,
       success: res => {
@@ -113,7 +138,7 @@ Page({
       console.log('Binding', fav_bindtap)
       this.setData({
         fav_bindtap: fav_bindtap==2 ? 1 : 2,
-        favorite_id: res.data
+        favorite_id: res.data,
       })
       const del_bindtap = this.data.del_bindtap
       console.log('Binding', fav_bindtap)
