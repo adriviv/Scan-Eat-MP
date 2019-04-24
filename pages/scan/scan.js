@@ -6,27 +6,24 @@ Page({
    */
   data: {
     userId: wx.getStorageSync('user_id'),
-    // scan: false,
+  
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-  
+    
   },
 
 
-  // scan: function () {
-    // let that = this
-    // this.setData({
-     //  scan: true
-    // })
-    bindScan: function (){
+     bindScan: function (){
       const that = this
           wx.scanCode({
       /** onlyFromCamera: true, */
       success: (res) => {
+        that.setData({ scan: false }) 
+
         console.log("super1", res)
         let food = {
           barcode: res.result
@@ -48,17 +45,13 @@ Page({
                 content: 'Do you wan to add it ?',
                 success: function (res) {
                    if (res.confirm) {
-                    //that.setData({
-                    //  scan: false
-                   // }) 
+                    
                     wx.reLaunch({
                       url: '../form/form',
 
                     })
                   } else if (res.cancel) {
-                    //that.setData({
-                     // scan: false
-                   // }) 
+                
                   console.log('User clicks cancel')
                  }
                }
@@ -73,6 +66,7 @@ Page({
                 wx.request({
                   url: `https://scaneat.wogengapp.cn/api/v1/users/${that.data.userId}/scans`,
                   success: res => {
+                    console.log('super', res)
                     that.setData(res.data)
                     var last = res.data.scans.slice(-1)[0]
                     wx.navigateTo({
@@ -85,36 +79,34 @@ Page({
           },
         })
       },
-      // fail: (err) => {
-        // this.setData({
-        //   scan: false
-       // }) 
-      //}
+
     })
   },
-  // },
+
 
 
 
   onReady: function () {
-
+  
   },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    // if (this.data.scan == false) {
-      // this.scan()
-    // } else {
-     //  console.log('yeah')
-   //  }
+     if (this.data.scan == true) {
+      this.scan()
+     } else {
+      console.log('yeah')
+    }
   },
 
   /**
    * Lifecycle function--Called when page hide
    */
   onHide: function () {
+  
+
   },
 
   /**
