@@ -18,6 +18,11 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function () {
+    wx.showToast({
+      title: 'Loading',
+      icon: 'loading',
+      duration: 2000
+    })
     const page = this
 
     wx.request({

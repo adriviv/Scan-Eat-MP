@@ -10,10 +10,9 @@
 
 
 .userinfo-avatar {
-  width: 200rpx;
-  height: 200rpx;
+  width: 400rpx;
+  height: 400rpx;
   margin: 20rpx;
-  border-radius: 50%;
 }
 
 .userinfo-nickname {
@@ -28,11 +27,14 @@
 }
 
 .btn {
-  position: fixed;
-  top: 600rpx;
-  color: #EA7B4C;
-  border: 4px solid #EA7B4C;
-  border-radius: 25px;
-  font-family: bold;
+position:fixed;
+top:1000rpx;
+color:#EA7B4C;
+border:4px solid #EA7B4C;
+border-radius:49px;
+font-family:bold;
+font-size:25px;
+font-weight:bold;
+background-color:white;
 }
 

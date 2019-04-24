@@ -1,0 +1,76 @@
+
+
+
+
+
+
+<view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('/images/background-image.jpeg');">
+    <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <view class="userinfo">
+      <view class="welcome">Welcome</view>
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+  </view>
+
+
+<view class='canvasDivider'>
+  <canvas-ring id="canvasVeryGood" lineColor='green' title="" valueColor="green" value="{{very_good_nutrition_percentage}}" active></canvas-ring>
+  <canvas-ring id="canvasGood" lineColor='#4fff54' title="" valueColor="#4fff54" value="{{good_nutrition_percentage}}" active></canvas-ring>
+  <canvas-ring id="canvasMedium" lineColor='yellow' title="" valueColor="yellow" value="{{medium_nutrition_percentage}}" active></canvas-ring>
+</view>
+<view class='informations'><view>Very Good</view><view>Good</view><view>Medium</view></view>
+
+<view class='canvasDivider2'>
+  <canvas-ring class='canvaBad'id="canvasBad" lineColor='orange' title="" valueColor="orange" value="{{bad_nutrition_percentage}}" active></canvas-ring>
+  <canvas-ring class='canvaVeryBad'id="canvasVeryBad" lineColor='red' title="" valueColor="red" value="{{very_bad_nutrition_percentage}}" active></canvas-ring>
+</view>
+<view class='informations2'><view>bad</view><view>Very Bad</view></view>
+
+
+
+<view class='result_container'>
+  <view class="score-container">
+    <image class="faces" src="/images/smiley-very-good.png"></image> 
+    <view class='score_number'>
+    <view class='category_nutrition'>Very Good</view>
+      <view class='nutrition_number'>{{very_good_nutrition_number}}</view>
+    </view>
+  </view>
+
+  <view class="score-container">
+    <image class="faces" src="/images/smiley-good.png"></image> 
+    <view class='score_number'>
+    <view class='category_nutrition'>Good</view>
+      <view class='nutrition_number'>{{good_nutrition_number}}</view>
+    </view>
+  </view>
+
+  <view class="score-container">
+    <image class="faces" src="/images/smiley-medium.png"></image> 
+    <view class='score_number'>
+    <view class='category_nutrition'>Medium</view>
+      <view class='nutrition_number'>{{medium_nutrition_number}}</view>
+    </view>
+  </view>
+
+  <view class="score-container">
+    <image class="faces" src="/images/smiley-medium-bad.png"></image> 
+    <view class='score_number'>
+    <view class='category_nutrition'>Bad</view>
+      <view class='nutrition_number'>{{bad_nutrition_number}}</view>
+    </view>
+  </view>
+
+  <view class="score-container">
+    <image class="faces" src="/images/smiley-bad.png"></image> 
+    <view class='score_number'>
+    <view class='category_nutrition'>Very Bad</view>
+      <view class='nutrition_number'>{{very_bad_nutrition_number}}</view>
+    </view>
+  </view>
+</view>
+
+

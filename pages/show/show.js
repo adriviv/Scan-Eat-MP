@@ -83,9 +83,10 @@ Page({
    * Lifecycle function--Called when page unload
    */
   onUnload: function () {
-    wx.reLaunch({
+  /**  wx.reLaunch({
       url: '../profile/profile',
     })
+    */
     
   },
   /**

@@ -6,17 +6,24 @@
     "pages/scan/scan",
     "pages/profile/profile",
     "pages/show/show",
-    "pages/form/form"
+    "pages/form/form", 
+    "pages/dashboard/dashboard"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "ScanEat",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
         "selectedColor": "#EA7B4C",
     "list": [
+      {
+        "pagePath": "pages/dashboard/dashboard",
+        "text": "Dashboard",
+        "iconPath": "/images/dashboar_icon.png",
+        "selectedIconPath": "/images/dashboard.png"
+      },
       {
         "pagePath": "pages/favorite/favorite",
         "text": "Favorite",
@@ -31,7 +38,7 @@
       },
       {
         "pagePath": "pages/profile/profile",
-        "text": "Profile",
+        "text": "History",
         "iconPath": "/images/profile_footer.png",
         "selectedIconPath": "/images/profile_footer_orange.png"
       }

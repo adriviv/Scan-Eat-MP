@@ -49,8 +49,10 @@
     <view class="h3">Allergens</view>
     <image bindtap="list" class="dropdown" src="/images/dropdown-down.png"></image>
   </view>
-    <view class="allergens-subdiv"wx:if="{{active_allergens == '2'}}">
-    <view class="h5">{{food.allergens}}</view>
+    <view class='test'>
+      <view class="allergens-subdiv"wx:if="{{active_allergens == '2'}}">
+      <view class="h5">{{food.allergens}}</view>
+      </view>
     </view>
 </view>
 

@@ -153,7 +153,6 @@ right:28rpx;
 
 .h5 {
   position:relative;
-  top:24rpx;
   font-size:27rpx;
   margin-left:22rpx;
 }
@@ -169,4 +168,8 @@ right:28rpx;
   height: 80rpx;
   position: relative;
   top: -8rpx;
+}
+
+.test {
+  margin-bottom: 10px;
 }

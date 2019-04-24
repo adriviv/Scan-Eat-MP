@@ -1,0 +1,133 @@
+.canvasDivider {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40rpx;
+}
+.canvasDivider2 {
+  display: flex;
+margin-bottom: -45rpx;
+}
+
+.canvaBad{
+  position: relative;
+  left: 130rpx;
+  bottom: 45rpx;
+}
+
+.canvaVeryBad{
+  position: relative;
+  left: 145rpx;
+  bottom: 45rpx;
+}
+
+/* Top Header  */
+.banner {
+  color: white;
+  text-align: center;
+  height: 15vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.userinfo-nickname {
+  color: white;
+  font-weight: bold;
+}
+.welcome {
+  font-size: 15px;
+}
+.divider {
+  height: 45rpx;
+  padding: 10rpx 10rpx 20rpx 10rpx;
+  background-color: #EA7B4C;
+  color: white;
+  font-weight: bold;
+  margin-top: 5rpx; 
+
+}
+.header {
+position: relative; 
+  top: 50%;
+  height: 25px;
+  background-color: #EA7B4C;
+  padding: 14px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  padding-left: 5px;
+  
+}
+.faces {
+height:80rpx;
+width:80rpx;
+position: relative;
+}
+
+.score-container{
+  display: flex;
+  padding: 5rpx;
+  margin-bottom: 5rpx;
+  position: relative;
+  border: solid 2px #f4f2eb;
+  border-radius: 10px;
+  background-color: #f4f2eb;
+}
+
+.score_number{
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
+.nutrition_number {
+  position: absolute;
+  right: 36rpx;
+  top: 16rpx;
+}
+
+.category_nutrition{
+  position: relative;
+  left: 40rpx;
+  top: 16rpx;
+}
+
+.result_container {
+  margin-top: 30rpx;
+  box-shadow: 0 0 30rpx rgba(0,0,0,0.2);
+}
+.canvas-group{
+  margin-top: 30rpx;
+}
+
+.informations {
+  display: flex;
+  font-size: 30rpx;
+  color: grey;
+  justify-content: space-between;
+  padding: 0 55rpx 0 40rpx;
+  margin-bottom: 45rpx;
+
+}
+.informations2 {
+  display: flex;
+  font-size: 30rpx;
+  color: grey;
+  justify-content: space-between;
+  padding: 0 180rpx 0 220rpx;
+  margin-bottom: 40rpx;
+}
+
