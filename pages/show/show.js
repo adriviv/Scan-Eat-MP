@@ -26,7 +26,7 @@ Page({
     const page = this
 
   wx.request({
-    url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites`,
+    url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites`,
     method: 'GET',
     success(res) {
 
@@ -51,7 +51,7 @@ Page({
   }})
 
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans/${options.id}`,
+      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/scans/${options.id}`,
       success: res => {
         console.log('please', res)
         page.setData(res.data)
@@ -114,7 +114,7 @@ Page({
     const favoriteId = e.currentTarget.dataset.id
     const page = this
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites/${favoriteId}`,
+      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites/${favoriteId}`,
       method: 'DELETE',
       success: res => {
         this.setData({
@@ -130,7 +130,7 @@ Page({
     let favorite = this.data.food.id
     let userId = wx.getStorageSync('user_id')
   wx.request({
-    url: `http://localhost:3000/api/v1/users/${userId}/favorites`,
+    url: `https://scaneat.wogengapp.cn/api/v1/users/${userId}/favorites`,
     method: 'POST',
     data: { favorite: { food_id: favorite } },
     success: res => {
