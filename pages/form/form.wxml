@@ -9,7 +9,7 @@
       <view class="section_gap">
         <view class="section__title">Category</view>
         <view class="select">
-          <radio-group name="radio-group">
+          <radio-group name="radio_group">
             <label><radio value="food"/>Food</label>
             <label class="bevarage"><radio value="beverage"/>Beverage</label>
             <label class="bevarage"><radio value="other"/>Other</label>
@@ -17,6 +17,11 @@
         </view>
       </view>
 
+      <view class="user-input">
+        <view class="text-area-wrap">
+        <textarea value="{{barcode}}" style="input-size" placeholder="Barcode" class="input-height" name="barcode" maxlength="-1" auto-height />
+        </view>
+      </view>
       <view class="user-input">
         <view class="text-area-wrap">
         <textarea value="{{name}}" style="input-size" placeholder="Product Name" class="input-height" name="name" maxlength="-1" auto-height />
