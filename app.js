@@ -3,9 +3,9 @@
 App({
   onLaunch: function () {
     var that = this
-    this.getUserCode(function (res) { 
+    this.getUserCode(function (res) {
       console.log('app.js', 'getUserCode success', res)
-      
+
       // that.getUserInfo(function (res) {
       //   console.log(res)
       // })
@@ -36,13 +36,13 @@ App({
           data: {
             code: res.code
           },
-          success: function(res) {        
+          success: function(res) {
             console.log('please',res.data.id)
             wx.setStorageSync('user_id', res.data.id)
-            
-            
+
+
             // cb(res.data)
-            
+
           }
         })
       }
@@ -54,8 +54,8 @@ App({
     featureManager: {},
     userInfo: null,
     currentCustomer: null,
-    API_URL: 'https://scaneat.wogengapp.cn/api/v1'
+    API_URL: 'http://localhost:3000/api/v1'
 
   }
-}) 
+})
 

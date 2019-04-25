@@ -6,14 +6,14 @@ Page({
    */
   data: {
     userId: wx.getStorageSync('user_id'),
-  
+
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    
+
   },
 
 
@@ -27,7 +27,7 @@ Page({
           icon: 'loading',
           duration: 4000
         });
-        that.setData({ scan: false }) 
+        that.setData({ scan: false })
 
         console.log("super1", res)
         let food = {
@@ -37,7 +37,7 @@ Page({
         let userId = wx.getStorageSync('user_id')
         console.log('scanCode userId', userId)
         wx.request({
-          url: `https://scaneat.wogengapp.cn/api/v1/users/${userId}/scans`,
+          url: `http://localhost:3000/api/v1/users/${userId}/scans`,
           method: 'POST',
           data: food,
 
@@ -50,12 +50,12 @@ Page({
                 content: 'Do you wan to add it ?',
                 success: function (res) {
                    if (res.confirm) {
-                    
+
                     wx.navigateTo({
                       url: '../form/form',
                     })
                   } else if (res.cancel) {
-                
+
                   console.log('User clicks cancel')
                  }
                }
@@ -68,7 +68,7 @@ Page({
               });
               setTimeout(function (e) {
                 wx.request({
-                  url: `https://scaneat.wogengapp.cn/api/v1/users/${that.data.userId}/scans`,
+                  url: `http://localhost:3000/api/v1/users/${that.data.userId}/scans`,
                   success: res => {
                     console.log('super', res)
                     that.setData(res.data)
@@ -91,7 +91,7 @@ Page({
 
 
   onReady: function () {
-  
+
   },
 
   /**
@@ -109,7 +109,7 @@ Page({
    * Lifecycle function--Called when page hide
    */
   onHide: function () {
-  
+
 
   },
 

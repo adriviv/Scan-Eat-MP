@@ -34,7 +34,7 @@
         </view> -->
     <view class="card-product">
       <view class="image">
-        <image src="{{favorite.image_url}}" class="product-img"></image> 
+        <image src="{{favorite.image_url}}" class="product-img" mode="aspectFill"></image> 
       </view>
       <view class="sub_card">
         <view class="info-n-smiley card-product-infos">

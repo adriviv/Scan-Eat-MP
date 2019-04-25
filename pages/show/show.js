@@ -5,7 +5,7 @@ Page({
    * Page initial data
    */
   data: {
-    userId: wx.getStorageSync('user_id'), 
+    userId: wx.getStorageSync('user_id'),
     active_allergens: 1,
     fav_bindtap: 1,
   },
@@ -13,26 +13,28 @@ Page({
   active_allergens: function (e) {
     var a = e.currentTarget.dataset
     this.setData({
-      active_allergens: this.data.active_allergens == 1 ? 2 : 1 
-    }) 
+      active_allergens: this.data.active_allergens == 1 ? 2 : 1
+    })
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+
+    console.log(options)
     wx.showToast({
       title: 'Loading',
       icon: 'loading',
       duration: 2000
     });
-    
+
     console.log('yihouuuuuuu', options)
     const page = this
 
   wx.request({
 
-    url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites`,
+    url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites`,
 
     method: 'GET',
     success(res) {
@@ -53,14 +55,16 @@ Page({
         })
       }
 
-     
+
 
   }})
 
-    console.log(`https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/scans/${options.id}`)
+    console.log(`http://localhost:3000/api/v1/users/${page.data.userId}/scans/${options.id}`)
 
+
+  if(options.favorited) {
     wx.request({
-      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/scans/${options.id}`,
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/foods/${options.id}`,
       success: res => {
         console.log('Food data', res.data)
         page.setData(res.data)
@@ -68,13 +72,24 @@ Page({
         // title: page.data.name,
       }
     })
+  } else {
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans/${options.id}`,
+      success: res => {
+        console.log('Food data', res.data)
+        page.setData(res.data)
+        //wx.setNavigationBarTitle({
+        // title: page.data.name,
+      }
+    })
+  }
   },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
   },
-  
+
   notationMethod: function () {
     wx.navigateTo({
       url: '/pages/informations/informations',
@@ -101,7 +116,7 @@ Page({
       url: '../profile/profile',
     })
     */
-    
+
   },
   /**
    * Page event handler function--Called when user drop down
@@ -128,7 +143,7 @@ Page({
     const favoriteId = e.currentTarget.dataset.id
     const page = this
     wx.request({
-      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites/${favoriteId}`,
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites/${favoriteId}`,
 
       method: 'DELETE',
       success: res => {
@@ -145,7 +160,7 @@ Page({
     let favorite = this.data.food.id
     let userId = wx.getStorageSync('user_id')
   wx.request({
-    url: `https://scaneat.wogengapp.cn/api/v1/users/${userId}/favorites`,
+    url: `http://localhost:3000/api/v1/users/${userId}/favorites`,
     method: 'POST',
     data: { favorite: { food_id: favorite } },
     success: res => {

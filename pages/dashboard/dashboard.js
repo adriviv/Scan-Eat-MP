@@ -22,14 +22,14 @@ Page({
     })
     const page = this
     wx.request({
-      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/scans/statisitics`,
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans/statisitics`,
       success: res => {
         console.log('percentage', res)
 
         page.setData(res.data)
 
         //wx.setNavigationBarTitle({
-        // title: page.data.name,   
+        // title: page.data.name,
       }
     })
     wx.getUserInfo({

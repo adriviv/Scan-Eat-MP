@@ -37,9 +37,9 @@ Page({
     }
 
     wx.request({
-      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/propositions`,
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/propositions`,
       method: 'POST',
-     
+
       data: { proposition: proposition },
       success: res => {
 console.log('nihao', res)

@@ -2,7 +2,7 @@
 const app = getApp()
 
 Page({
-  
+
   /**
    * Page initial data
    */
@@ -26,17 +26,17 @@ Page({
     const page = this
 
     wx.request({
-      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/scans`,
+      url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans`,
       success: res => {
         console.log('Product Data', res)
 
         page.setData(res.data)
 
         //wx.setNavigationBarTitle({
-        // title: page.data.name,   
+        // title: page.data.name,
       }
-    }) 
-    
+    })
+
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
@@ -48,7 +48,7 @@ Page({
         }
       })
   },
-  
+
    showScan: function (e) {
       const data = e.currentTarget.dataset;
       const scanId = data.scanId;
