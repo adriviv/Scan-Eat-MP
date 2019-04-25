@@ -44,7 +44,7 @@ Page({
     // }
     const page = this
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites`,
+      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites`,
       method: 'GET',
       success(res) {
 
@@ -105,7 +105,7 @@ Page({
     const favoriteId = e.currentTarget.dataset.id
     const page = this
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${page.data.userId}/favorites/${favoriteId}`,
+      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/favorites/${favoriteId}`,
       method: 'DELETE',
       success: res => {
         wx.showToast({

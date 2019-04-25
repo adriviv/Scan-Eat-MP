@@ -26,7 +26,7 @@ Page({
     const page = this
 
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans`,
+      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/scans`,
       success: res => {
         console.log('Product Data', res)
 
