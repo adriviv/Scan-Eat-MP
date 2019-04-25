@@ -18,15 +18,18 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function () {
+
+
     wx.showToast({
       title: 'Loading',
       icon: 'loading',
       duration: 2000
     })
+
     const page = this
 
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${page.data.userId}/scans`,
+      url: `https://scaneat.wogengapp.cn/api/v1/users/${page.data.userId}/scans`,
       success: res => {
         console.log('Product Data', res)
 

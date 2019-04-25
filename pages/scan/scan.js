@@ -37,7 +37,7 @@ Page({
         let userId = wx.getStorageSync('user_id')
         console.log('scanCode userId', userId)
         wx.request({
-          url: `http://localhost:3000/api/v1/users/${userId}/scans`,
+          url: `https://scaneat.wogengapp.cn/api/v1/users/${userId}/scans`,
           method: 'POST',
           data: food,
 
@@ -66,9 +66,12 @@ Page({
                 icon: 'success',
                 duration: 4000
               });
+              wx.reLaunch({
+                url: '/pages/profile/profile',
+              })
               setTimeout(function (e) {
                 wx.request({
-                  url: `http://localhost:3000/api/v1/users/${that.data.userId}/scans`,
+                  url: `https://scaneat.wogengapp.cn/api/v1/users/${that.data.userId}/scans`,
                   success: res => {
                     console.log('super', res)
                     that.setData(res.data)
